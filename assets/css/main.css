@@ -220,6 +220,7 @@ input, select, textarea {
 		display:none;
 	}
 
+
 /* Container */
 
 	.container {
@@ -2404,11 +2405,6 @@ input, select, textarea {
 					.box.style1.right .inner {
 						padding-left: 2em;
 					}
-
-					.box.style1.left .inner {
-						padding-right: 2em;
-					}
-
 				.box.style2 header {
 					padding: 2em;
 				}
