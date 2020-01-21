@@ -200,6 +200,7 @@ input, select, textarea {
 
 	header {
 		margin-bottom: 1em;
+		margin-top: -3%;
 	}
 
 		header p {
@@ -214,6 +215,9 @@ input, select, textarea {
 
 	br.clear {
 		clear: both;
+	}
+	form{
+		display:none;
 	}
 
 /* Container */
@@ -1955,7 +1959,6 @@ input, select, textarea {
 
 	.icon {
 		text-decoration: none;
-		text-decoration: none;
 	}
 
 		.icon:before {
@@ -2171,6 +2174,17 @@ input, select, textarea {
 			margin: 0 0 9em 0;
 			font-size: 0.8em;
 		}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Poptrox */
 
