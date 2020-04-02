@@ -32,13 +32,22 @@ section {
 .topHeading h3 {
   margin: 0 0 2%;
 }
+.topHeading .links {
+  text-align: right;
+}
+.topHeading .links a {
+  color: #93d6ff;
+  margin: 1% 2%;
+  font-weight: 600;
+}
 .topHeading .buttons {
   border: 1px dotted blue;
 }
 .topHeading .buttons button {
-  font-size: 2rem;
+  font-size: 1.6rem;
   width: 15%;
   margin: 0 2%;
+  padding: 0.3%;
 }
 .topHeading .icons {
   display: grid;
@@ -46,4 +55,20 @@ section {
   width: 40%;
   margin: 3% auto 7%;
   border: 1px dotted green;
+}
+.projects {
+  border: 1px dotted purple;
+  background-color: #747474;
+  height: 35vh;
+  transform: skew(2deg, -2deg);
+}
+.aboutMe {
+  background-color: #444444;
+  color: white;
+  height: 35vh;
+}
+.contact {
+  background-color: #0a0708;
+  color: white;
+  height: 35vh;
 }
