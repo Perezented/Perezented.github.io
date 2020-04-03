@@ -8,34 +8,62 @@
             src="https://kit.fontawesome.com/85e213a335.js"
             crossorigin="anonymous"
         ></script>
+        <script src="./assets/index.js"></script>
         <title>Michael Perez - Portfolio</title>
     </head>
 
     <body>
         <section class="topHeading">
             <header class="links">
-                <a href="index.html">Home</a>
-                <a href="#">Resume</a>
-                <a href="#">Projects</a>
-                <a href="#">About Me</a>
-                <a href="#">Contact Me</a>
+                <nav>
+                    <a href="#">Resume</a>
+                    <a href="#project">Projects</a>
+                    <a href="#about">About Me</a>
+                    <a href="#contact">Contact Me</a>
+                </nav>
             </header>
+
             <div class="title">
                 <h1>Michael Perez</h1>
                 <h3>Full Stack Web Dev</h3>
                 <div class="icons">
-                    <p><i class="fab fa-github fa-2x"></i></p>
-                    <p><i class="fab fa-linkedin-in fa-2x"></i></p>
-                    <p><i class="fab fa-twitter fa-2x"></i></p>
+                    <p>
+                        <i
+                            class="fab fa-github fa-2x"
+                            onclick="window.location.href='https://github.com/Perezented'"
+                        ></i>
+                    </p>
+                    <p>
+                        <i
+                            class="fab fa-linkedin-in fa-2x"
+                            onclick="window.location.href='https://twitter.com/PerezentingMe"
+                        ></i>
+                    </p>
+                    <p>
+                        <i
+                            class="fab fa-twitter fa-2x"
+                            onclick="window.location.href='https://twitter.com/PerezentingMe"
+                        ></i>
+                    </p>
                 </div>
             </div>
         </section>
-        <section class="projects">
+        <section class="projects" id="project">
             <div class="unskewleft">
                 <h2>Projects</h2>
                 <div class="projectTiles">
                     <div class="square">
                         <h4>CoMake</h4>
+                        <p>
+                            CoMake is a site about posting concerns where the
+                            whole community can join in and put in their own
+                            concerns and vote on issues already posted.
+                            Sometimes us as citizens do not feel connect to the
+                            government. This app is the middle man. Whatever
+                            government group that manages the sector of a
+                            concern would then fix and correct the highest voted
+                            concerns.
+                        </p>
                         <img
                             src="/img/CoMakeSite.gif"
                             alt="Changing images of a website about neighborhood request and concerns."
@@ -47,6 +75,15 @@
                     </div>
                     <div class="square">
                         <h4>Med Cabinet</h4>
+                        <p>
+                            This project was done over the course of a week. As
+                            of April 2020, it is only a demonstration of front
+                            end coding. Main languages are HTML and CSS, with
+                            LESS as a pre-processor. Med Cabinet is an app to
+                            assist new cannabis users, as well as experienced
+                            users, in helps of keeping people off of
+                            pharmaceuticals, plus find their right ailment.
+                        </p>
                         <img
                             src="/img/MedCabinet.gif"
                             alt="Changing images of a website about Cannabis and where to get such information."
@@ -59,14 +96,39 @@
                 </div>
             </div>
         </section>
-        <section class="aboutMe">
+        <section class="aboutMe" id="about">
             <div class="unskewright">
                 <h2>About Me</h2>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="unskewleft">
                 <h2>Contact Me!</h2>
+                            <div class="form">
+                                <form method="GET" action="thanks.html">
+                                    <div class="fields">
+                                        <div class="field">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" id="name" required />
+                                        </div>
+                                        <div class="field">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email" required />
+                                        </div>
+                                        <div class="field">
+                                            <label class="message" for="message">Message</label>
+                                            <textarea name="message" id="message" rows="4" required></textarea>
+                                        </div>
+                                    </div>
+                                    <ul class="actions">
+                                        <button class="join" type="submit">Send Message</button>
+                                        <!-- <li>
+                                                        <input type="submit" value="Send Message" />
+                                                    </li> -->
+                                    </ul>
+                                </form>
+                            </div>
+
             </div>
         </section>
     </body>
