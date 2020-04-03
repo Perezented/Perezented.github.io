@@ -38,7 +38,7 @@ section {
   background-image: url(/img/P_20200402_091204.jpg);
   background-size: cover;
   background-position-y: bottom;
-  filter: contrast(120%);
+  filter: contrast(150%);
   color: #ffffff;
   height: 90vh;
   text-shadow: 0 0 3px black, 0 0 4px black, 0 0 5px black;
