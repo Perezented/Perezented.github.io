@@ -50,12 +50,13 @@ section {
 .topHeading h3 {
   margin: 0 0 2%;
 }
-.topHeading .links {
+.topHeading .links nav {
   text-align: right;
   background-color: #0a07086d;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  padding: 0.5% 0;
 }
-.topHeading .links a {
+.topHeading .links nav a {
   color: #93d6ff;
   margin: 1% 2% 2%;
   font-weight: 600;
