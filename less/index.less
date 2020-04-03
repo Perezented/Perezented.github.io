@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-color: #0a0708;
+    background-color: #111;
     overflow-x: hidden;
 }
 h2 {
@@ -94,7 +94,7 @@ section {
     color: white;
 }
 .projects {
-    background-color: #747474;
+    background-color: rgb(51, 50, 50);
     height: auto;
     h4 {
         margin: 4% 0 2%;
@@ -109,7 +109,7 @@ section {
             max-width: 100%;
             height: auto;
             padding-bottom: 10%;
-            background-color: rgba(68, 68, 68, 0.346);
+            background-color: rgba(178, 173, 173, 0.217);
         }
         img {
             width: 90%;
@@ -133,11 +133,11 @@ section {
     }
 }
 .aboutMe {
-    background-color: #444444;
+    background-color: #2e2c2c;
     transform: skew(-2deg, 2deg);
 }
 .contact {
-    background-color: #0a0708;
+    background-color: #111111;
     form {
         display: flex;
         flex-direction: column;
@@ -155,6 +155,16 @@ section {
             width: 90%;
         }
     }
+}
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.5s all ease-out;
+    z-index: 99;
+}
+.newTextAnimation {
+    opacity: 0;
+    transform: translateY(55%);
 }
 
 .projects,
