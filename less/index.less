@@ -17,7 +17,9 @@ h3 {
 h4 {
     font-size: 2.6rem;
 }
-
+h5 {
+    font-size: 1.4rem;
+}
 p {
     font-size: 1.2rem;
 }
@@ -48,7 +50,8 @@ section {
     filter: contrast(150%);
     color: rgb(255, 255, 255);
     height: 90vh;
-    text-shadow: 0 0 3px black, 0 0 4px black, 0 0 5px black;
+    text-shadow: 0 0 1px black, 0 0 8px black, 0 0 9px white, 0 0 10px black,
+        0 0 11px white;
 
     h1 {
         font-size: 5rem;
@@ -164,9 +167,26 @@ section {
 .aboutMe {
     background-color: #2e2c2c;
     transform: skew(-2deg, 2deg);
+    height: auto;
     p {
+        width: 100%;
+        margin: 0;
+        line-height: 2.2rem;
+    }
+    .aboutPadding {
+        padding-bottom: 20%;
+    }
+    .column {
+        display: grid;
+        grid-template-columns: 0.7fr 2fr;
         width: 80%;
         margin: 0 auto;
+        .skillIcons {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 5%;
+        }
     }
 }
 
