@@ -132,10 +132,6 @@ section {
         }
     }
 }
-.aboutMe {
-    background-color: #2e2c2c;
-    transform: skew(-2deg, 2deg);
-}
 .contact {
     background-color: #111111;
     form {
@@ -160,11 +156,18 @@ section {
     opacity: 1;
     transform: translateY(0);
     transition: 1.5s all ease-out;
-    z-index: 99;
 }
 .newTextAnimation {
     opacity: 0;
     transform: translateY(55%);
+}
+.aboutMe {
+    background-color: #2e2c2c;
+    transform: skew(-2deg, 2deg);
+    p {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 .projects,
