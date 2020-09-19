@@ -43,48 +43,101 @@ export function Projects() {
             <h4>Restaurant Menu</h4>
             <h5>React.js & Node.js/Express</h5>
             <ProjectParagraphs>
-              Implemented both the front end, using React.js, and back end,
-              using Node.js/Express along side with PostgreSQL for this full
-              stack web application.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              iure, necessitatibus eum soluta non blanditiis aliquam voluptates
+              culpa delectus quasi est enim? Hic, deserunt? Esse voluptate aut
+              cumque fugiat dolore.
             </ProjectParagraphs>
             <img src="/img/CoMakeSite.gif" alt="Information sentence here" />
             <SourceButtons>
               {" "}
-              <SourceButton>View Source Code</SourceButton>
-              <SourceButton>Visit Site</SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href =
+                    "https://github.com/Perezented/react-menu";
+                }}
+              >
+                View React.js Source Code
+              </SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href = "https://react-menu.vercel.app/";
+                }}
+              >
+                Visit Site
+              </SourceButton>{" "}
+              <SourceButton
+                onClick={() => {
+                  window.location.href = "https://github.com/Perezented/Menu";
+                }}
+              >
+                View Node.js Source Code
+              </SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href = "https://node-menu.herokuapp.com/menu";
+                }}
+              >
+                Visit API
+              </SourceButton>
             </SourceButtons>{" "}
           </Square>
           <Square>
             <h4>Dev Desk Queue</h4>
+            <h5>React.js</h5>
             <ProjectParagraphs>
-              This project was done over the course of a week. As of April 2020,
-              it is only a demonstration of front end coding. Main languages are
-              HTML and CSS, with LESS as a pre-processor. Med Cabinet is an app
-              to assist new cannabis users, as well as experienced users, in
-              helps of keeping people off of pharmaceuticals, plus find their
-              right ailment.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+              quisquam velit deserunt ratione quod unde distinctio sint cumque,
+              vel molestias ipsam eaque voluptatem tempora maxime nesciunt. Quas
+              laudantium fuga dolores.
             </ProjectParagraphs>
             <img src="/img/MedCabinet.gif" alt="Information sentence here" />
             <SourceButtons>
-              <SourceButton>View Source Code</SourceButton>
-              <SourceButton>Visit Site</SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href =
+                    "https://github.com/Build-Week-Dev-Queue-3/front-end";
+                }}
+              >
+                View Source Code
+              </SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href =
+                    "https://devdeskapp.netlify.app/index.html";
+                }}
+              >
+                Visit Site
+              </SourceButton>
             </SourceButtons>{" "}
           </Square>
           <Square>
             <h4>Conway's Game of Life</h4>
             <h5>React.js</h5>
             <ProjectParagraphs>
-              This project was done over the course of a week. As of April 2020,
-              it is only a demonstration of front end coding. Main languages are
-              HTML and CSS, with LESS as a pre-processor. Med Cabinet is an app
-              to assist new cannabis users, as well as experienced users, in
-              helps of keeping people off of pharmaceuticals, plus find their
-              right ailment.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              iure, necessitatibus eum soluta non blanditiis aliquam voluptates
+              culpa delectus quasi est enim? Hic, deserunt? Esse voluptate aut
+              cumque fugiat dolore.
             </ProjectParagraphs>
             <img src="/img/MedCabinet.gif" alt="Information sentence here" />
             <SourceButtons>
-              <SourceButton>View Source Code</SourceButton>
-              <SourceButton>Visit Site</SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href =
+                    "https://github.com/Perezented/ConwaysGameOfLife";
+                }}
+              >
+                View Source Code
+              </SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href =
+                    "https://conways-game-of-life.perezented.vercel.app/";
+                }}
+              >
+                Visit Site
+              </SourceButton>
             </SourceButtons>{" "}
           </Square>
         </ProjectTiles>
