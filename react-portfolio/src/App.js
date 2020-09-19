@@ -8,17 +8,26 @@ import About from "./components/about";
 import Contact from "./components/contact";
 
 function App() {
-    return (
-        <div className="App">
-            <section class="topHeading">
-                <Header />
-                <Main />
-            </section>
-            <Projects />
-            <About />
-            <Contact />
-        </div>
-    );
+  return (
+    <div className="App">
+      {" "}
+      <button
+        className="back_to_top"
+        onClick={() => {
+          document.documentElement.scrollTop = 0;
+        }}
+      >
+        Back To Top
+      </button>
+      <section class="topHeading">
+        <Header />
+        <Main />{" "}
+      </section>
+      <Projects />
+      <About />
+      <Contact />{" "}
+    </div>
+  );
 }
 
 export default App;
