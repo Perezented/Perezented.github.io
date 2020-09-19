@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/header";
@@ -8,11 +8,20 @@ import About from "./components/about";
 import Contact from "./components/contact";
 
 function App() {
+  const [btt, setBtt] = useState("not_visible");
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > window.innerHeight) {
+        setBtt("back_to_top");
+      } else setBtt("not_visible");
+    });
+  }, []);
+
   return (
     <div className="App">
       {" "}
       <button
-        className="back_to_top"
+        className={btt}
         onClick={() => {
           document.documentElement.scrollTop = 0;
         }}
