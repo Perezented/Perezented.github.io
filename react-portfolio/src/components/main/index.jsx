@@ -18,12 +18,6 @@ function Main() {
             onclick="window.location.href='https://www.linkedin.com/in/perezenting-michael/'"
           ></i>
         </p>
-        {/* <p>
-                    <i
-                        className="fab fa-twitter fa-2x"
-                        onclick="window.location.href='https://twitter.com/PerezentingMe'"
-                    ></i>
-                </p> */}
       </div>{" "}
     </section>
   );

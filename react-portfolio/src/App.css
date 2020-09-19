@@ -168,20 +168,22 @@ i {
   margin: 0;
   line-height: 2.2rem;
 }
-.aboutMe .aboutPadding {
-  padding-bottom: 20%;
-}
+
 .aboutMe .column {
   display: grid;
   grid-template-columns: 0.7fr 2fr;
   width: 80%;
   margin: 0 auto;
 }
+.aboutMe .column div {
+  margin: 0 5%;
+}
 .aboutMe .column .skillIcons {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 5%;
+  border: 1px solid white;
 }
 .projects,
 .contact {

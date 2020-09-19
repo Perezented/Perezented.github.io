@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
+import conways from "../../imgs/ConwaysGameOfLife.gif";
+import restaurant from "../../imgs/Restaurant.gif";
+import devdesk from "../../imgs/DevDesk.gif";
 const Square = styled.div`
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 1%;
+  background-color: rgba(178, 173, 173, 0.217);
+`;
+const SquareLast = styled.div`
   max-width: 100%;
   height: auto;
   padding-bottom: 10%;
@@ -12,20 +20,22 @@ const SourceButtons = styled.div`
   margin: 3% auto 5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   justify-items: center;
-  width: 50%;
+  width: 90%;
 `;
 const SourceButton = styled.button`
   width: 90%;
   height: 2rem;
+  margin-bottom: 3vh;
 `;
 
 const ProjectTiles = styled.div`
   max-width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 3.3%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1%;
 `;
 
 const ProjectParagraphs = styled.p`
@@ -48,7 +58,7 @@ export function Projects() {
               culpa delectus quasi est enim? Hic, deserunt? Esse voluptate aut
               cumque fugiat dolore.
             </ProjectParagraphs>
-            <img src="/img/CoMakeSite.gif" alt="Information sentence here" />
+            <img src={restaurant} alt="Information sentence here" />
             <SourceButtons>
               {" "}
               <SourceButton
@@ -91,7 +101,7 @@ export function Projects() {
               vel molestias ipsam eaque voluptatem tempora maxime nesciunt. Quas
               laudantium fuga dolores.
             </ProjectParagraphs>
-            <img src="/img/MedCabinet.gif" alt="Information sentence here" />
+            <img src={devdesk} alt="Information sentence here" />
             <SourceButtons>
               <SourceButton
                 onClick={() => {
@@ -111,7 +121,7 @@ export function Projects() {
               </SourceButton>
             </SourceButtons>{" "}
           </Square>
-          <Square>
+          <SquareLast>
             <h4>Conway's Game of Life</h4>
             <h5>React.js</h5>
             <ProjectParagraphs>
@@ -120,7 +130,7 @@ export function Projects() {
               culpa delectus quasi est enim? Hic, deserunt? Esse voluptate aut
               cumque fugiat dolore.
             </ProjectParagraphs>
-            <img src="/img/MedCabinet.gif" alt="Information sentence here" />
+            <img src={conways} alt="info ehre" />
             <SourceButtons>
               <SourceButton
                 onClick={() => {
@@ -139,7 +149,7 @@ export function Projects() {
                 Visit Site
               </SourceButton>
             </SourceButtons>{" "}
-          </Square>
+          </SquareLast>
         </ProjectTiles>
       </div>
     </section>
