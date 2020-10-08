@@ -111,8 +111,9 @@ export function Projects() {
             <ProjectParagraphs>
               Quick Student Login: test@email.com <br />
               Quick Student Password: encrypted <br />
-              Quick Helper Login: testt@email.com --( 2 t's in the testt) <br />{" "}
-              Quick Helper Password: encrypted <br />
+              <br />
+              Quick Helper Login: testt@email.com --( 2 t's in the testt ){" "}
+              <br /> Quick Helper Password: encrypted <br />
               <br />
               <p>
                 A help desk ticket mock web app to assist students quicker with

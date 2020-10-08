@@ -98,21 +98,19 @@ i {
   width: 20%;
   margin: 3% auto 3%;
 }
-.icons p {
+.icons a {
   text-shadow: 0 0 8px white, 0 0 9px black;
+  color: white;
 }
-.icons p:hover {
+.icons a:hover {
   cursor: pointer;
 }
 .projects,
 .contact,
 .aboutMe {
   width: 130%;
-  /* margin-left: -15%;
-    margin-top: -6%; */
   margin: -6% 0 -10% -15%;
   padding-bottom: 15%;
-  /* height: 75vh; */
   color: white;
 }
 .projects {
