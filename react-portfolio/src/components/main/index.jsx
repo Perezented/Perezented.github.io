@@ -8,13 +8,13 @@ function Main() {
       <div className="icons">
         <p>
           <i
-            className="fab fa-github fa-2x"
+            className="fab fa-github fa-3x"
             onclick="window.location.href='https://github.com/Perezented'"
           ></i>
         </p>
         <p>
           <i
-            className="fab fa-linkedin-in fa-2x"
+            className="fab fa-linkedin-in fa-3x"
             onclick="window.location.href='https://www.linkedin.com/in/perezenting-michael/'"
           ></i>
         </p>

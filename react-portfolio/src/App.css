@@ -180,10 +180,11 @@ i {
 }
 .aboutMe .column .skillIcons {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 5%;
-  border: 1px solid white;
+  row-gap: 12%;
+  margin-top: -10%;
 }
 .projects,
 .contact {
@@ -199,4 +200,9 @@ i {
 .unskewright {
   max-width: 80%;
   margin: 0 auto;
+}
+
+label {
+  margin: 0 1%;
+  justify-self: start;
 }
