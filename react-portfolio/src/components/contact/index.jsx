@@ -1,7 +1,6 @@
 import emailjs from "emailjs-com";
 import React from "react";
-// import { init } from "emailjs-com";
-// init("user_2WocCOhmC4a9o4yO5bwUB");
+
 export default function Contact() {
   function sendEmail(e) {
     e.preventDefault();
