@@ -1,9 +1,14 @@
 import emailjs from "emailjs-com";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [thankYouMessage, setThankYouMessage] = useState(false);
   function sendEmail(e) {
     e.preventDefault();
+    setTimeout(() => {
+      setThankYouMessage(false);
+    }, 6000);
+    setThankYouMessage(true);
     emailjs
       .sendForm(
         "service_r5la9ln",
@@ -21,9 +26,22 @@ export default function Contact() {
       );
     e.target.reset();
   }
+  console.log(thankYouMessage);
+  // thankYouMessage === true && setTimeout(setThankYouMessage(false), 4000);
   return (
     <section class="contact" id="contact">
       <div class="unskewleft">
+        {thankYouMessage === true ? (
+          <div>
+            <h4 style={{ opacity: 1 }}>
+              Thank You, Your message has been recieved!
+            </h4>
+          </div>
+        ) : (
+          <div>
+            <h4 style={{ opacity: 0 }}>You should not be able to see me</h4>
+          </div>
+        )}
         <h2>Contact Me</h2>
         <div class="form">
           <form onSubmit={sendEmail}>
@@ -44,12 +62,7 @@ export default function Contact() {
                 <label class="message" for="message">
                   Message
                 </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="4"
-                  required
-                ></textarea>
+                <textarea name="message" id="message" rows="4" required />
               </div>
             </div>
             <ul class="actions">

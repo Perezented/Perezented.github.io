@@ -39,6 +39,8 @@ const ProjectTiles = styled.div`
 const ProjectParagraphs = styled.p`
   width: 80%;
   margin: 1% auto 3%;
+  text-align: left;
+  line-height: 1.8rem;
 `;
 
 export function Projects() {
@@ -104,8 +106,8 @@ export function Projects() {
               Quick Student Password: encrypted <br />
               Quick Helper Login: testt@email.com --( 2 t's in the testt) <br />{" "}
               Quick Helper Password: encrypted
-              <br /> Students are able to make an account and put in tickets for
-              anything that goes wrong. Students are also able to edit or delete
+              <br />• Students are able to make an account and put in tickets
+              for anything that goes wrong as well as be able to edit or delete
               their own post. <br />• The whole list of tickets put in are able
               to be seen by everyone so students do not put in tickets already
               called in by other students. <br />
