@@ -15,20 +15,20 @@ export default function About() {
               <i class="fab fa-css3 fa-3x"></i>
             </div>
             <div>
-              <h5>JavaScript</h5>
-              <i class="fab fa-js-square fa-3x"></i>
-            </div>
-            <div>
               <h5>React.js</h5>
               <i class="fab fa-react fa-3x"></i>
+            </div>
+            <div>
+              <h5>JavaScript</h5>
+              <i class="fab fa-js-square fa-3x"></i>
             </div>
             <div>
               <h5>Python</h5>
               <i class="fab fa-python fa-3x"></i>
             </div>
             <div>
-              <h5>Git</h5>
-              <i class="fab fa-git-square fa-3x"></i>
+              <h5>Node.js</h5>
+              <i class="fab fa-node-js fa-3x"></i>{" "}
             </div>
           </div>
           <div>
