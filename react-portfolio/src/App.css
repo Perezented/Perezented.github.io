@@ -109,11 +109,8 @@ i {
 .contact,
 .aboutMe {
   width: 130%;
-  /* margin-left: -15%;
-    margin-top: -6%; */
   margin: -6% 0 -10% -15%;
   padding-bottom: 15%;
-  /* height: 75vh; */
   color: white;
 }
 .projects {
