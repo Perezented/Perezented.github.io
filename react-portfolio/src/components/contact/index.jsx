@@ -4,7 +4,6 @@ import React from "react";
 export default function Contact() {
   function sendEmail(e) {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_r5la9ln",
