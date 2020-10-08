@@ -1,33 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import conways from "../../imgs/ConwaysGameOfLife.gif";
-import restaurant from "../../imgs/Restaurant.gif";
-import devdesk from "../../imgs/DevDesk.gif";
+import conways from "../../imgs/gameOfLifeGif.gif";
+import restaurant from "../../imgs/restGif.gif";
+import devdesk from "../../imgs/devDeskGif.gif";
 const Square = styled.div`
   max-width: 100%;
   height: auto;
-  padding-bottom: 1%;
+  padding-bottom: 5%;
   background-color: rgba(178, 173, 173, 0.217);
 `;
 const SquareLast = styled.div`
   max-width: 100%;
   height: auto;
-  padding-bottom: 10%;
   background-color: rgba(178, 173, 173, 0.217);
 `;
 const SourceButtons = styled.div`
   font-size: 2rem;
-  margin: 3% auto 5%;
+  margin: 5% auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   justify-items: center;
   width: 90%;
+  height: 10%;
+  row-gap: 20%;
 `;
 const SourceButton = styled.button`
   width: 90%;
-  height: 2rem;
-  margin-bottom: 3vh;
+  height: 2.5rem;
+  margin: auto 0;
 `;
 
 const ProjectTiles = styled.div`
