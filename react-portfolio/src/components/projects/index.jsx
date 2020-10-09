@@ -3,6 +3,8 @@ import styled from "styled-components";
 import conways from "../../imgs/gameOfLifeGif.gif";
 import restaurant from "../../imgs/restGif.gif";
 import devdesk from "../../imgs/devDeskGif.gif";
+import useWindowDimensions from "../useWindowDimensions";
+
 const Square = styled.div`
   max-width: 100%;
   height: auto;
@@ -12,6 +14,7 @@ const Square = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
 const SourceButtons = styled.div`
   font-size: 2rem;
   margin: 5% auto;
@@ -27,14 +30,6 @@ const SourceButton = styled.button`
   margin: auto 0;
 `;
 
-const ProjectTiles = styled.div`
-  max-width: 90%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1%;
-`;
-
 const ProjectParagraphs = styled.p`
   width: 80%;
   margin: 1% auto 3%;
@@ -43,6 +38,22 @@ const ProjectParagraphs = styled.p`
 `;
 
 export function Projects() {
+  let gridTempRowOrCol;
+  const { height, width } = useWindowDimensions();
+
+  if (width < 800) {
+    gridTempRowOrCol = "grid-template-rows: repeat(3, 1fr);";
+  } else if (width > 800) {
+    gridTempRowOrCol = "grid-template-columns: repeat(3, 1fr);";
+  }
+  const ProjectTiles = styled.div`
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1%;
+    ${gridTempRowOrCol}
+  `;
+
   return (
     <section class="projects" id="project">
       <div class="unskewleft">
@@ -74,6 +85,7 @@ export function Projects() {
             <SourceButtons>
               {" "}
               <SourceButton
+                id="scrollShower"
                 onClick={() => {
                   window.location.href =
                     "https://github.com/Perezented/react-menu";

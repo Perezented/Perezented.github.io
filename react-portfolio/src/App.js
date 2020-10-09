@@ -10,7 +10,10 @@ function App() {
   const [btt, setBtt] = useState("not_visible");
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > window.innerHeight) {
+      if (
+        document.getElementById("scrollShower").getBoundingClientRect().top <=
+        window.innerHeight
+      ) {
         setBtt("back_to_top");
       } else setBtt("not_visible");
     });
