@@ -1,6 +1,9 @@
 html {
   overflow-x: hidden;
 }
+.newTextAnimation {
+  opacity: 0;
+}
 
 .App {
   z-index: -1;
@@ -130,7 +133,27 @@ i {
   width: 90%;
   padding: 5% 0 0;
 }
+.scrollDown {
+  z-index: 99;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1%;
+  text-align: center;
+  animation: animate 5s linear infinite;
+}
 
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .contact {
   background-color: #111111;
   margin-bottom: 0;
@@ -153,15 +176,21 @@ i {
 .contact form textarea {
   width: 90%;
 }
+@keyframes translate {
+  0% {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opactiy: 1;
+  }
+}
 .appear {
   opacity: 1;
-  transform: translateY(0);
-  transition: 1.5s all ease-out;
+  animation: translate 0.2s linear;
 }
-.newTextAnimation {
-  opacity: 0;
-  transform: translateY(55%);
-}
+
 .aboutMe {
   background-color: #2e2c2c;
   transform: skew(-5deg, 5deg);

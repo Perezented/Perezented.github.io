@@ -29,6 +29,7 @@ export default function Contact() {
   return (
     <section class="contact" id="contact">
       <div class="unskewleft">
+        <h2>Contact Me</h2>
         {thankYouMessage === true ? (
           <div>
             <h4 style={{ opacity: 1 }}>
@@ -40,7 +41,6 @@ export default function Contact() {
             <h4 style={{ opacity: 0 }}>You should not be able to see me</h4>
           </div>
         )}
-        <h2>Contact Me</h2>
         <div class="form">
           <form onSubmit={sendEmail}>
             <div class="fields">
