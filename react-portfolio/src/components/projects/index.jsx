@@ -53,7 +53,6 @@ export function Projects() {
     gap: 1%;
     ${gridTempRowOrCol}
   `;
-
   return (
     <section class="projects" id="project">
       <div class="unskewleft">
