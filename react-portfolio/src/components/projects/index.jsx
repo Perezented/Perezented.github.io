@@ -177,7 +177,7 @@ export function Projects() {
               <li>
                 Live cells will remain alive if there are 2 or 3 neighborly live
                 cells around. Neighborly being any cell around the specified
-                cell (Left, right, up, down, and diagonals.{" "}
+                cell (Left, right, up, down, and diagonals).{" "}
               </li>
               <li>
                 If a dead cell has exactly 3 neighbors, the dead cell comes back
