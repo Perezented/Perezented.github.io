@@ -26,8 +26,6 @@ export default function Contact() {
       );
     e.target.reset();
   }
-  console.log(thankYouMessage);
-  // thankYouMessage === true && setTimeout(setThankYouMessage(false), 4000);
   return (
     <section class="contact" id="contact">
       <div class="unskewleft">
