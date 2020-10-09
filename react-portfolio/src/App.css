@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 .App {
   z-index: -1;
 }
@@ -7,7 +11,8 @@
 .back_to_top {
   position: fixed;
   z-index: 1;
-  margin: 94vh 0 0 85vw;
+  bottom: 20px;
+  right: 20px;
   background: linear-gradient(rgba(128, 128, 128, 0.639), rgba(0, 0, 0, 0.4));
   color: rgba(255, 255, 255, 0.534);
   border: 1px solid rgba(47, 79, 79, 0.37);
@@ -109,7 +114,7 @@ i {
 .contact,
 .aboutMe {
   width: 130%;
-  margin: -6% 0 -10% -15%;
+  margin: -6% 0 -10% -14%;
   padding-bottom: 15%;
   color: white;
 }
@@ -204,4 +209,67 @@ i {
 label {
   margin: 0 1%;
   justify-self: start;
+}
+@media (max-width: 800px) {
+  .back_to_top {
+    width: 30%;
+  }
+  .topHeading {
+    height: 60vh;
+    background-position-x: center;
+  }
+  .icons {
+    margin-top: 10%;
+    width: 40%;
+  }
+  .projects,
+  .contact,
+  .aboutMe {
+    width: 200%;
+    margin: -6% 0 -10% -49%;
+    padding-bottom: 30%;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h3 {
+    font-size: 2.3rem;
+  }
+  .unskewleft,
+  .unskewright {
+    max-width: 50%;
+  }
+  .aboutMe .column {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutMe .column .skillIcons {
+    margin: 5%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .aboutMe .column {
+    margin-left: 0%;
+    width: 95%;
+  }
+  .aboutMe .skillIcons div {
+    margin: 0 1%;
+  }
+  .aboutMe p {
+    text-align: center;
+  }
+  .contact form {
+    width: 90%;
+  }
+  p,
+  li,
+  button {
+    font-size: 0.9rem;
+  }
+  .links nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .links nav a {
+    font-size: 1.3rem;
+  }
 }
