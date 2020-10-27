@@ -58,7 +58,7 @@ export function Projects() {
       <div class="unskewleft">
         <h2>Projects</h2>
         <ProjectTiles>
-          <Square>
+          <Square id='square'>
             <img src={restaurant} alt="Information sentence here" />
             <h4>Restaurant Menu</h4>
             <h5>React.js & Node.js/Express</h5>
@@ -115,7 +115,7 @@ export function Projects() {
               </SourceButton>
             </SourceButtons>{" "}
           </Square>
-          <Square>
+          <Square id='square'>
             <img src={devdesk} alt="Information sentence here" />
             <h4>Dev Desk Queue</h4>
             <h5>React.js</h5>{" "}
@@ -162,7 +162,7 @@ export function Projects() {
               </SourceButton>
             </SourceButtons>{" "}
           </Square>
-          <Square>
+          <Square id='square'>
             <img src={conways} alt="info ehre" />
             <h4>Conway's Game of Life</h4>
             <h5>React.js</h5>
