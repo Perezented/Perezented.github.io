@@ -30,6 +30,7 @@ function App() {
       let scroll = window.scrollY;
       console.log(scroll)
       if (
+              
               document.getElementById("project").getBoundingClientRect().top<window.innerHeight - 275
       ) {
         console.log('projects')
@@ -42,6 +43,7 @@ function App() {
         document.getElementById('project').classList.add('newTextAnimation')
         document.querySelector('.scrollDown').style.display = ''
       }
+
       if (
         document.getElementById("about").getBoundingClientRect().top<window.innerHeight
       ) {
@@ -55,26 +57,21 @@ function App() {
           document.getElementById('about').classList.remove('appear')
           document.getElementById('about').classList.add('newTextAnimation')
       }
+
       if (
-              document.getElementById("contact").getBoundingClientRect().top + 400<window.innerHeight
+        document.getElementById("contact").getBoundingClientRect().top-200<window.innerHeight
       ) {
         console.log('contact')
+        console.log(window.innerHeight,document.getElementById("contact").getBoundingClientRect().top )
         document.getElementById('contact').classList.add('appear')
         document.getElementById('contact').classList.remove('newTextAnimation')
 
 
+        
       } else {
-        document.getElementById('contact').classList.remove('appear')
-        document.getElementById('contact').classList.add('newTextAnimation')
-
+          document.getElementById('contact').classList.remove('appear')
+          document.getElementById('contact').classList.add('newTextAnimation')
       }
-
-          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        // you're at the bottom of the page
-            console.log('bottom')
-            console.log(window.screen)
-            
-    }
     });
 
   }, []);

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import conways from "../../imgs/gameOfLifeGif.gif";
 import restaurant from "../../imgs/restGif.gif";
+import psf from "../../imgs/psf.gif";
 import devdesk from "../../imgs/devDeskGif.gif";
 import useWindowDimensions from "../useWindowDimensions";
 
@@ -42,9 +43,9 @@ export function Projects() {
   const { height, width } = useWindowDimensions();
 
   if (width < 800) {
-    gridTempRowOrCol = "grid-template-rows: repeat(3, 1fr);";
+    gridTempRowOrCol = "grid-template-rows: repeat(2, 1fr);";
   } else if (width > 800) {
-    gridTempRowOrCol = "grid-template-columns: repeat(3, 1fr);";
+    gridTempRowOrCol = "grid-template-columns: repeat(2, 1fr);";
   }
   const ProjectTiles = styled.div`
     max-width: 90%;
@@ -58,7 +59,61 @@ export function Projects() {
       <div class="unskewleft">
         <h2>Projects</h2>
         <ProjectTiles>
-          <Square>
+          <Square id="square">
+            <img src={psf} alt="Information sentence here" />
+            <h4>Pro-Select Flooring LLC</h4>
+            <h5>React.js & Node.js/Express</h5>
+            <ProjectParagraphs>
+              <p>
+                A front end for Pro-Select Flooring to get more customers
+                through the website. Users are able to view Pro-Select
+                Flooring's work starting from the home page and all the way
+                through to the gallery.
+              </p>
+              <br />
+              <li>
+                Developed a back-end server to receive photo data stored using
+                node.js
+              </li>
+              <li>
+                React.js side to display images in an auto-fetch gallery, images
+                all being part of a linked list to keep track of which photo is
+                prev/next{" "}
+              </li>
+              <li>
+                Web pages have animations that bring more attention to the main
+                elements{" "}
+              </li>
+              <li>
+                Optimized for desktop, tablet, mobile, and all screens of all
+                sizes while not losing performance according to Lighthouse
+                tests.
+              </li>
+              <li>
+                Reused components while still realizing the separate pages such
+                as contact and join us page
+              </li>
+            </ProjectParagraphs>
+            <SourceButtons>
+              {" "}
+              <SourceButton
+                id="scrollShower"
+                onClick={() => {
+                  window.location.href = "https://github.com/Perezented/PSF";
+                }}
+              >
+                View React.js Source Code
+              </SourceButton>
+              <SourceButton
+                onClick={() => {
+                  window.location.href = "https://pro-selectflooring.com/";
+                }}
+              >
+                Visit Site
+              </SourceButton>{" "}
+            </SourceButtons>{" "}
+          </Square>
+          <Square id="square">
             <img src={restaurant} alt="Information sentence here" />
             <h4>Restaurant Menu</h4>
             <h5>React.js & Node.js/Express</h5>
@@ -115,7 +170,7 @@ export function Projects() {
               </SourceButton>
             </SourceButtons>{" "}
           </Square>
-          <Square>
+          <Square id="square">
             <img src={devdesk} alt="Information sentence here" />
             <h4>Dev Desk Queue</h4>
             <h5>React.js</h5>{" "}
@@ -162,7 +217,7 @@ export function Projects() {
               </SourceButton>
             </SourceButtons>{" "}
           </Square>
-          <Square>
+          <Square id="square">
             <img src={conways} alt="info ehre" />
             <h4>Conway's Game of Life</h4>
             <h5>React.js</h5>
