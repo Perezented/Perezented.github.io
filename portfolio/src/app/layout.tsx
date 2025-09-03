@@ -6,7 +6,7 @@ import GalaxyLayout from "@/components/GalaxyLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Your Portfolio | Web Developer",
+  title: "Michael Perez's Portfolio | Web Developer",
   description: "Portfolio website showcasing web development projects and skills",
 };
 

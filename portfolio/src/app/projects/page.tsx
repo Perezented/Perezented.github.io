@@ -66,7 +66,7 @@ const projects: Project[] = [
     title: "My Portfolio",
     description: "A showcase of my work as a developer, featuring projects built with various technologies and frameworks. This portfolio demonstrates my skills in front-end and back-end development, as well as my ability to create responsive and user-friendly interfaces.",
     technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Three.js", "emailjs-com"],
-    liveUrl: "https://perezented-portfolio-obim82e6a.vercel.app/",
+    liveUrl: "https://perezented-portfolio.vercel.app/",
     // githubUrl: "https://github.com/example",
     category: frontEndString,
     imageUrl: "/Perezented-Portfolio.gif",
