@@ -11,6 +11,7 @@ export default function GalaxyLayout({ children }: { children: React.ReactNode }
   const rotation = useGalaxyRotation();
   return (
     <body className={`${inter.className} bg-gray-900 text-gray-100 relative`}>
+      <GalaxyBackground rotation={rotation} />
       <div style={{
         position: 'fixed',
         top: 0,
@@ -19,10 +20,9 @@ export default function GalaxyLayout({ children }: { children: React.ReactNode }
         bottom: 0,
         width: '100%',
         height: '100%',
-        zIndex: 1,
+        zIndex: -1,
         backgroundColor: 'rgba(0,0,0,.8)'
       }}></div>
-      <GalaxyBackground rotation={rotation} />
       <Navbar />
       <main className="min-h-screen relative z-10">
         {children}
