@@ -31,14 +31,14 @@ export function useGalaxyRotation() {
     return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
-  useEffect(() => {
-    // Optionally, rotate on scroll
-    const onScroll = () => {
-      setRotation((prev) => prev + (window.scrollY / 100) * 0.0005);
-    };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  // useEffect(() => {
+  //   // Optionally, rotate on scroll
+  //   const onScroll = () => {
+  //     setRotation((prev) => prev + (window.scrollY / 100) * 0.0005);
+  //   };
+  //   window.addEventListener('scroll', onScroll);
+  //   return () => window.removeEventListener('scroll', onScroll);
+  // }, []);
 
   return rotation;
 }
