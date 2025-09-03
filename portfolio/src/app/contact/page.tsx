@@ -181,13 +181,13 @@ export default function Contact() {
                 />
               </div>
 
-              <button
+                <button
                 type="submit"
-                className="w-full rounded-md bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors disabled:opacity-60"
+                className="w-full rounded-md bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-500 hover:via-purple-400 hover:to-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors disabled:opacity-60"
                 disabled={loading}
-              >
+                >
                 {loading ? 'Sending...' : 'Send Message'}
-              </button>
+                </button>
             </form>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function Contact() {
           <div className="mt-8">
             <a
               href="mailto:Perez6473@Gmail.com"
-              className="inline-flex items-center rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+              className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:from-blue-500 hover:via-purple-400 hover:to-pink-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
             >
               Send Email Directly
             </a>

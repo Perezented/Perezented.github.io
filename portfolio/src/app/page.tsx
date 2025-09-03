@@ -6,24 +6,26 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-60">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">
               Hi, I&apos;m{' '}
-              <span className="text-blue-600 dark:text-blue-400">Michael Perez</span>
+              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Michael Perez
+              </span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               A passionate web developer creating modern, responsive, and user-friendly applications.
               I specialize in React, Next.js, and TypeScript.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link
+                <Link
                 href="/projects"
-                className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
-              >
+                className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+                >
                 View My Work
-              </Link>
+                </Link>
               <Link
                 href="/contact"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -66,7 +68,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="mx-auto h-12 w-12 text-blue-600 dark:text-blue-400">
+              <div className="mx-auto h-12 w-12 text-purple-600 dark:text-purple-400">
                 <CodeBracketIcon className="h-12 w-12" />
               </div>
               <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-white">
@@ -78,7 +80,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="mx-auto h-12 w-12 text-blue-600 dark:text-blue-400">
+              <div className="mx-auto h-12 w-12 text-pink-600 dark:text-pink-400">
                 <DevicePhoneMobileIcon className="h-12 w-12" />
               </div>
               <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-white">
@@ -139,8 +141,8 @@ export default function Home() {
                   priority
                 />
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    Project {project.name}
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text transition-colors">
+                    <span>{project.name}</span>
                   </h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-300">
                     {project.description}
@@ -167,7 +169,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link
               href="/projects"
-              className="inline-flex items-center rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+              className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
             >
               View All Projects
             </Link>

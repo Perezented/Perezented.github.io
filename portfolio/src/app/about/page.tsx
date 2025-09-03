@@ -61,7 +61,7 @@ export default function About() {
 
           {/* Profile image */}
           <div className="lg:order-first">
-            <Image src="/ascii_profile_pic_.jpg" alt="Profile Image" width={500} height={500} />
+            <Image src="/ascii_profile_pic_.jpg" alt="Profile Image" width={500} height={500} className='rounded' />
             {/* <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg"></div> */}
           </div>
         </div>
@@ -84,15 +84,13 @@ export default function About() {
                   </h3>
                   <p className="text-blue-600 dark:text-blue-400 font-medium">Company Name</p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">April 2021 - Aug 2025</p>
-                  <p className="text-gray-600 dark:text-gray-300 mt-2">
-                    <ul className='list-disc pl-5'>
-                      <li>Proficient in <strong>TypeScript</strong> and <strong>JavaScript</strong> for building dynamic web applications.</li>
-                      <li>Extensive experience with front-end frameworks such as <strong>React</strong> and <strong>Angular</strong>.</li>
-                      <li>Background in back-end development using <strong>C#</strong>.</li>
-                      <li>Expertise in CSS frameworks, including <strong>Bootstrap</strong> and <strong>Tailwind CSS</strong>.</li>
-                      <li>Hands-on experience with <strong>DNN (DotNetNuke)</strong> and <strong>WordPress</strong> for content management and web development.</li>
-                    </ul>
-                  </p>
+                  <ul className='text-gray-600 dark:text-gray-300 mt-2 list-disc pl-5'>
+                    <li>Proficient in <strong>TypeScript</strong> and <strong>JavaScript</strong> for building dynamic web applications.</li>
+                    <li>Extensive experience with front-end frameworks such as <strong>React</strong> and <strong>Angular</strong>.</li>
+                    <li>Background in back-end development using <strong>C#</strong>.</li>
+                    <li>Expertise in CSS frameworks, including <strong>Bootstrap</strong> and <strong>Tailwind CSS</strong>.</li>
+                    <li>Hands-on experience with <strong>DNN (DotNetNuke)</strong> and <strong>WordPress</strong> for content management and web development.</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -101,7 +99,7 @@ export default function About() {
             <div className="space-y-8">
               <div className="flex">
                 <div className="flex-shrink-0">
-                  <AcademicCapIcon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  <AcademicCapIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -116,7 +114,7 @@ export default function About() {
 
               <div className="flex">
                 <div className="flex-shrink-0">
-                  <HeartIcon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  <HeartIcon className="h-8 w-8 text-pink-600 dark:text-pink-400" />
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
