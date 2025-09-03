@@ -60,9 +60,11 @@ export default function About() {
           </div>
 
           {/* Profile image */}
-          <div className="lg:order-first">
+          <div className="lg:order-first self-center mx-auto">
             <Image src="/ascii_profile_pic_.jpg" alt="Profile Image" width={500} height={500} className='rounded' />
-            {/* <div className="aspect-square bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg"></div> */}
+            <div className="mt-4 text-center">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Michael Perez</h3>
+            </div>
           </div>
         </div>
 

@@ -114,9 +114,9 @@ export default function Home() {
               image: '/psfhome.gif',
               imageAlt: 'Pro-Select Flooring website demo'
             }, {
-              name: 'Clarity Payhub',
+              name: 'Clarity-Ecommerce Framework / Clarity Payhub',
               description: 'A payment processing platform that simplifies transactions for businesses.',
-              technologies: ['React', 'TypeScript', 'radix-ui', 'tailwind', 'C#'],
+              technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS"],
               image: '/PH-InvoiceAging.gif',
               imageAlt: 'Clarity Payhub for invoices on aging setting demo'
             }, {
@@ -124,7 +124,7 @@ export default function Home() {
               description: 'Hippa site',
               technologies: ['React', 'Clarity Ecommerce Framework', 'Bootstrap', 'DNN', 'C#'],
               image: '/SPG-Edit-Patient-Updates.gif',
-              imageAlt: 'New Solutions demo'
+              imageAlt: 'A full-stack hippa compliant application built with React.js and Node.js, ensuring secure user authentication and data protection...'
             }].map((project) => (
               <div
                 key={project.name}
@@ -137,7 +137,7 @@ export default function Home() {
                   alt={project.imageAlt}
                   width={640}
                   height={360}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-top max-h-[20rem]"
                   priority
                 />
                 <div className="p-6">
