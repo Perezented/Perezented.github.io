@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Pro-Select Flooring",
-    description: "A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.",
+    description: "Optimized for clarity and mobile responsiveness, with minimal JavaScript and no heavy client-side frameworks. Pro-Select Flooring is a service-focused platform showcasing commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states.",
     technologies: ["React.js", "Bootstrap", "jest", "axios", "emailjs-com", "gh-pages", "node-sass", "sass"],
     liveUrl: "https://Pro-SelectFlooring.com",
     githubUrl: "https://github.com/Perezented/PSF",
@@ -153,7 +153,7 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className={((project.githubUrl || project.liveUrl) ? "mt-4 " : null )+ "flex space-x-3"}>
+                <div className={((project.githubUrl || project.liveUrl) ? "mt-4 " : null) + "flex space-x-3"}>
                   {project.liveUrl && (
                     <Link
                       href={project.liveUrl}

@@ -63,12 +63,12 @@ export default function Contact() {
                 <EnvelopeIcon className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-4" />
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">Email</p>
-                    <a
+                  <a
                     href="mailto:Perez6473@Gmail.com"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
+                  >
                     Perez6473@Gmail.com
-                    </a>
+                  </a>
                 </div>
               </div>
 
@@ -76,12 +76,12 @@ export default function Contact() {
                 <PhoneIcon className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-4" />
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">Phone</p>
-                    <a
+                  <a
                     href="tel:+19187799639"
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
+                  >
                     +1 (918) 779-9639
-                    </a>
+                  </a>
                 </div>
               </div>
 
@@ -181,13 +181,13 @@ export default function Contact() {
                 />
               </div>
 
-                <button
+              <button
                 type="submit"
                 className="w-full rounded-md bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-500 hover:via-purple-400 hover:to-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors disabled:opacity-60"
                 disabled={loading}
-                >
+              >
                 {loading ? 'Sending...' : 'Send Message'}
-                </button>
+              </button>
             </form>
           </div>
         </div>

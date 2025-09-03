@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { ArrowDownIcon, CodeBracketIcon, DevicePhoneMobileIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import SkillCard from "@/components/SkillCard";
 
 export default function Home() {
   return (
@@ -20,12 +21,12 @@ export default function Home() {
               I specialize in React, Next.js, and TypeScript.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-                <Link
+              <Link
                 href="/projects"
                 className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
-                >
+              >
                 View My Work
-                </Link>
+              </Link>
               <Link
                 href="/contact"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -55,41 +56,24 @@ export default function Home() {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 text-blue-600 dark:text-blue-400">
-                <ComputerDesktopIcon className="h-12 w-12" />
-              </div>
-              <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-white">
-                Frontend Development
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Creating responsive and interactive user interfaces using React, Next.js, and modern CSS frameworks.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 text-purple-600 dark:text-purple-400">
-                <CodeBracketIcon className="h-12 w-12" />
-              </div>
-              <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-white">
-                Full Stack Development
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Building complete web applications with backend APIs, databases, and modern deployment practices.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 text-pink-600 dark:text-pink-400">
-                <DevicePhoneMobileIcon className="h-12 w-12" />
-              </div>
-              <h3 className="mt-6 text-lg font-semibold text-gray-900 dark:text-white">
-                Mobile-First Design
-              </h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Designing and developing applications that work seamlessly across all devices and screen sizes.
-              </p>
-            </div>
+            <SkillCard
+              icon={<ComputerDesktopIcon className="h-12 w-12" />}
+              iconClassName="text-blue-600 dark:text-blue-400"
+              title="Frontend Development"
+              description="Building responsive, interactive user interfaces with React, Next.js, and modern CSS frameworks."
+            />
+            <SkillCard
+              icon={<CodeBracketIcon className="h-12 w-12" />}
+              iconClassName="text-purple-600 dark:text-purple-400"
+              title="Backend & API Integration"
+              description="Developing robust backend APIs, integrating databases, and ensuring seamless data flow for full stack solutions."
+            />
+            <SkillCard
+              icon={<DevicePhoneMobileIcon className="h-12 w-12" />}
+              iconClassName="text-pink-600 dark:text-pink-400"
+              title="Mobile-First & Responsive Design"
+              description="Designing applications that look and perform great on all devices, prioritizing mobile usability and accessibility."
+            />
           </div>
         </div>
       </section>
@@ -109,7 +93,7 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[{
               name: 'Pro-Select Flooring',
-              description: 'Flooring company based out of Tulsa, OK. ',
+              description: 'Pro-Select Flooring is a service-focused platform showcasing commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states. Based out of Tulsa, OK - Pro-Select Flooring has over 100 years of experience collectively.',
               technologies: ['React', 'Cypress', 'EmailJS', 'axios', 'react-router-dom'],
               image: '/psfhome.gif',
               imageAlt: 'Pro-Select Flooring website demo'
@@ -121,10 +105,10 @@ export default function Home() {
               imageAlt: 'Clarity Payhub for invoices on aging setting demo'
             }, {
               name: 'New Solutions',
-              description: 'Hippa site',
+              description: 'A full-stack hippa compliant application built with React.js and Node.js, ensuring secure user authentication and data protection...',
               technologies: ['React', 'Clarity Ecommerce Framework', 'Bootstrap', 'DNN', 'C#'],
               image: '/SPG-Edit-Patient-Updates.gif',
-              imageAlt: 'A full-stack hippa compliant application built with React.js and Node.js, ensuring secure user authentication and data protection...'
+              imageAlt: 'New Solutions website demo'
             }].map((project) => (
               <div
                 key={project.name}
@@ -141,7 +125,7 @@ export default function Home() {
                   priority
                 />
                 <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text transition-colors">
                     <span>{project.name}</span>
                   </h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-300">
