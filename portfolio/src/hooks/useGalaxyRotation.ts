@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation';
 const routeRotations: Record<string, number> = {
   '/': 0,
   '': 0,
-  '/about': Math.PI / 2,
-  '/projects': Math.PI,
-  '/contact': (3 * Math.PI) / 2,
+  '/about': Math.PI / 1.5,
+  '/projects': Math.PI / 2,
+  '/contact': (3 * Math.PI) / .5,
 };
 
 export function useGalaxyRotation() {

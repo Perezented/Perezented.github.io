@@ -134,86 +134,73 @@ export default function GalaxyBackground({ rotation = 0 }) {
     const ring = new THREE.Points(ringGeometry, starMaterial);
     galaxy.add(ring);
 
-    // Add nebula cloud (purple/magenta)
-    const purpleNebulaGeometry = new THREE.TorusGeometry(45, 10, 16, 10);
-    const purpleNebulaMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(0x9b30ff), // purple base
-      transparent: true,
-      opacity: 0.18,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-    const purpleNebula = new THREE.Mesh(purpleNebulaGeometry, purpleNebulaMaterial);
-    purpleNebula.rotation.y = Math.random() * 2 * Math.PI;
-    // Set nebula at a random position within a certain range
-    const nebulaRadius = 10;
-    const nebulaTheta = Math.random() * 2 * Math.PI;
-    const nebulaPhi = Math.random() * Math.PI;
-    purpleNebula.position.set(
-      nebulaRadius * Math.sin(nebulaPhi) * Math.cos(nebulaTheta),
-      nebulaRadius * Math.sin(nebulaPhi) * Math.sin(nebulaTheta),
-      nebulaRadius * Math.cos(nebulaPhi)
-    );
-    galaxy.add(purpleNebula);
+    // Utility to create a random nebula mesh
+    function createRandomNebula() {
+      // Random geometry type
+      const geometries = [
+      () => new THREE.TorusGeometry(
+        30 + Math.random() * 20, // radius
+        6 + Math.random() * 8,   // tube
+        8 + Math.floor(Math.random() * 12), // radialSegments
+        8 + Math.floor(Math.random() * 12)  // tubularSegments
+      ),
+      () => new THREE.CapsuleGeometry(
+        30 + Math.random() * 20, // radius
+        6 + Math.random() * 8,   // length
+        8 + Math.floor(Math.random() * 12), // capSegments
+        8 + Math.floor(Math.random() * 12)  // radialSegments
+      ),
+      () => new THREE.SphereGeometry(
+        20 + Math.random() * 20, // radius
+        16 + Math.floor(Math.random() * 16), // widthSegments
+        16 + Math.floor(Math.random() * 16)  // heightSegments
+      ),
+      ];
+      const geometry = geometries[Math.floor(Math.random() * geometries.length)]();
 
-    // Add magenta highlight to nebula
-    const blueNebulaGeometry = new THREE.CapsuleGeometry(45, 10, 16, 10);
-    const blueNebulaMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(0x33ccff), // blue
-      transparent: true,
-      opacity: 0.2,
-    });
-    const blueNebula = new THREE.Mesh(blueNebulaGeometry, blueNebulaMaterial);
-    blueNebula.rotation.y = Math.random() * 2 * Math.PI;
-    // Set blue nebula at a random position within a certain range
-    const blueNebulaRadius = 15;
-    const blueNebulaTheta = Math.random() * 2 * Math.PI;
-    const blueNebulaPhi = Math.random() * Math.PI;
-    blueNebula.position.set(
-      blueNebulaRadius * Math.sin(blueNebulaPhi) * Math.cos(blueNebulaTheta),
-      blueNebulaRadius * Math.sin(blueNebulaPhi) * Math.sin(blueNebulaTheta),
-      blueNebulaRadius * Math.cos(blueNebulaPhi)
-    );
-    galaxy.add(blueNebula);
-    const greenNebulaGeometry = new THREE.CapsuleGeometry(45, 10, 16, 10);
-    const greenNebulaMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(0x123000), // green
-      transparent: true,
-      opacity: 0.2,
-    });
-    const greenNebula = new THREE.Mesh(greenNebulaGeometry, greenNebulaMaterial);
-    greenNebula.rotation.y = Math.random() * 2 * Math.PI;
-    // Set green nebula at a random position within a certain range
-    const greenNebulaRadius = 15;
-    const greenNebulaTheta = Math.random() * 2 * Math.PI;
-    const greenNebulaPhi = Math.random() * Math.PI;
-    greenNebula.position.set(
-      greenNebulaRadius * Math.sin(greenNebulaPhi) * Math.cos(greenNebulaTheta),
-      greenNebulaRadius * Math.sin(greenNebulaPhi) * Math.sin(greenNebulaTheta),
-      greenNebulaRadius * Math.cos(greenNebulaPhi)
-    );
-    galaxy.add(greenNebula);
+      // Random color
+      const colors = [0x9b30ff, 0x33ccff, 0x123000, 0xff33cc, 0xffff99, 0x00ff99];
+      const color = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
 
-    const magentaNebulaGeometry = new THREE.TorusGeometry(35, 10, 16, 10);
-    const magentaNebulaMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(0xff33cc), // magenta
+      // Random opacity and blending
+      const opacity = 0.12 + Math.random() * 0.12;
+      const blending = Math.random() > 0.5 ? THREE.AdditiveBlending : THREE.NormalBlending;
+
+      const material = new THREE.MeshBasicMaterial({
+      color,
       transparent: true,
-      opacity: 0.13,
-      blending: THREE.AdditiveBlending,
+      opacity,
+      blending,
       depthWrite: false,
-    });
-    const magentaNebula = new THREE.Mesh(magentaNebulaGeometry, magentaNebulaMaterial);
-    magentaNebula.rotation.y = Math.random() * 2 * Math.PI;
-    // Set magenta nebula at a random position within a certain range
-    const magentaNebulaRadius = 12;
-    const magentaNebulaTheta = Math.random() * 2 * Math.PI;
-    const magentaNebulaPhi = Math.random() * Math.PI;
-    magentaNebula.position.set(
-      magentaNebulaRadius * Math.sin(magentaNebulaPhi) * Math.cos(magentaNebulaTheta),
-      magentaNebulaRadius * Math.sin(magentaNebulaPhi) * Math.sin(magentaNebulaTheta),
-      magentaNebulaRadius * Math.cos(magentaNebulaPhi)
-    );
-    galaxy.add(magentaNebula);
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+
+      // Random rotation
+      mesh.rotation.x = Math.random() * 2 * Math.PI;
+      mesh.rotation.y = Math.random() * 2 * Math.PI;
+      mesh.rotation.z = Math.random() * 2 * Math.PI;
+
+      // Random position within a spherical shell
+      const theta = Math.random() * 2 * Math.PI;
+      const phi = Math.random() * Math.PI;
+      // Ensure nebulas spawn farther from the center (e.g., radius between 18 and 30)
+      const minRadius = 100;
+      const maxRadius = 120;
+      const nebulaRadius = minRadius + Math.random() * (maxRadius - minRadius);
+      mesh.position.set(
+        nebulaRadius * Math.sin(phi) * Math.cos(theta),
+        nebulaRadius * Math.sin(phi) * Math.sin(theta),
+        nebulaRadius * Math.cos(phi)
+      );
+
+      return mesh;
+    }
+
+    // Add several random nebulas
+    for (let i = 0; i < 10; i++) {
+      galaxy.add(createRandomNebula());
+    }
 
     // Add galaxy core
     const coreGeometry = new THREE.SphereGeometry(5, 60, 60);
