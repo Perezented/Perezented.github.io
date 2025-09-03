@@ -84,7 +84,7 @@ export default function About() {
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     Frontend Developer
                   </h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium">Company Name</p>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium">Clarity Ventures</p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">April 2021 - Aug 2025</p>
                   <ul className='text-gray-600 dark:text-gray-300 mt-2 list-disc pl-5'>
                     <li>Proficient in <strong>TypeScript</strong> and <strong>JavaScript</strong> for building dynamic web applications.</li>
