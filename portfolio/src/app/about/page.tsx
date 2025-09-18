@@ -73,9 +73,9 @@ export default function About() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-12 text-center">
             Experience & Education
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {/* Experience */}
-            <div className="space-y-8">
+            <div className="space-y-8 pb-5">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <BriefcaseIcon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
@@ -87,18 +87,34 @@ export default function About() {
                   <p className="text-blue-600 dark:text-blue-400 font-medium">Clarity Ventures</p>
                   <p className="text-gray-500 dark:text-gray-400 text-sm">April 2021 - Aug 2025</p>
                   <ul className='text-gray-600 dark:text-gray-300 mt-2 list-disc pl-5'>
-                    <li>Proficient in <strong>TypeScript</strong> and <strong>JavaScript</strong> for building dynamic web applications.</li>
-                    <li>Extensive experience with front-end frameworks such as <strong>React</strong> and <strong>Angular</strong>.</li>
-                    <li>Background in back-end development using <strong>C#</strong>.</li>
-                    <li>Expertise in CSS frameworks, including <strong>Bootstrap</strong> and <strong>Tailwind CSS</strong>.</li>
-                    <li>Hands-on experience with <strong>DNN (DotNetNuke)</strong> and <strong>WordPress</strong> for content management and web development.</li>
+                    <li>
+                      <strong>Front-End Development:</strong> Built responsive, interactive interfaces using TypeScript and JavaScript, leveraging React and Angular for modular architecture.
+                    </li>
+                    <li>
+                      <strong>Styling &amp; UI:</strong> Applied modern CSS frameworks such as Bootstrap and Tailwind CSS to create consistent, maintainable UI design systems.
+                    </li>
+                    <li>
+                      <strong>Back-End Engineering:</strong> Developed server-side logic and APIs with C#, integrated MSSQL databases, and created reusable scripts to optimize workflows and support team collaboration.
+                    </li>
+                    <li>
+                      <strong>CMS Integration:</strong> Customized and maintained content-driven websites using DotNetNuke (DNN) and WordPress, delivering tailored solutions for client needs.
+                    </li>
+                    <li>
+                      <strong>Cloud Deployment:</strong> Deployed applications to Azure and other Microsoft services, managing environments, resources, and CI/CD pipelines.
+                    </li>
+                    <li>
+                      <strong>Agile Collaboration:</strong> Collaborated in Agile teams, participating in daily standups, sprint planning, and regular client updates to ensure alignment and transparency.
+                    </li>
+                    <li>
+                      <strong>Project Diversity:</strong> Delivered solutions across diverse industries and use cases, adapting quickly to evolving requirements.
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
 
             {/* Education */}
-            <div className="space-y-8">
+            <div className="space-y-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <AcademicCapIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />

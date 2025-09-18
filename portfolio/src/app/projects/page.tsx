@@ -6,6 +6,7 @@ import Image, { StaticImageData } from 'next/image';
 
 interface Project {
   id: number;
+  sortOrder: number;
   title: string;
   description: string;
   technologies: string[];
@@ -21,6 +22,7 @@ const fullStackString = "Full Stack";
 const projects: Project[] = [
   {
     id: 1,
+    sortOrder: 4,
     title: "Pro-Select Flooring",
     description: "Optimized for clarity and mobile responsiveness, with minimal JavaScript and no heavy client-side frameworks. Pro-Select Flooring is a service-focused platform showcasing commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states.",
     technologies: ["React.js", "Bootstrap", "jest", "axios", "emailjs-com", "gh-pages", "node-sass", "sass"],
@@ -32,6 +34,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    sortOrder: 3,
     title: "Clarity E-Commerce Framework / Clarity Payhub",
     description: "A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.",
     technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS", "React.js", "Bootstrap"],
@@ -42,6 +45,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
+    sortOrder: 1,
     title: "New Solutions",
     description: "A full-stack hippa compliant application built with React.js and Node.js, ensuring secure user authentication and data protection. Doctor portal with patient management branched off of the Clarity E-Commerce Framework. Features a product showcase platform for New Solutions, featuring pharmaceutical compounds aimed at enhancing wellness, performance, and aesthetics.",
     technologies: ["React.js", "TypeScript", "C#", "MSSQL", "Bootstrap", "DNN", "Microsoft Azure"],
@@ -52,6 +56,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
+    sortOrder: 2,
     title: "Destination Athlete",
     description: "DestinationAthlete.com is built on the DNN (DotNetNuke) content management system, leveraging ASP.NET for server-side rendering and modular component integration. The site architecture supports dynamic content delivery and e-commerce functionality through custom modules and third-party extensions tailored for team sports merchandising.",
     technologies: ["DNN", "AngularJS", "TypeScript", "MSSQL", "Bootstrap"],
@@ -63,11 +68,12 @@ const projects: Project[] = [
   },
   {
     id: 5,
+    sortOrder: 5,
     title: "My Portfolio",
     description: "A showcase of my work as a developer, featuring projects built with various technologies and frameworks. This portfolio demonstrates my skills in front-end and back-end development, as well as my ability to create responsive and user-friendly interfaces.",
     technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Three.js", "emailjs-com"],
     liveUrl: "https://perezented-portfolio.vercel.app/",
-    // githubUrl: "https://github.com/example",
+    githubUrl: "https://github.com/Perezented/Perezented.github.io",
     category: frontEndString,
     imageUrl: "/Perezented-Portfolio.gif",
     live: true
@@ -112,7 +118,7 @@ export default function Projects() {
 
         {/* Projects grid */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.filter(x => x.category === currentSelectedCategory || currentSelectedCategory === "All").map((project) => (
+          {projects.sort((a, b) => a.sortOrder - b.sortOrder).filter(x => x.category === currentSelectedCategory || currentSelectedCategory === "All").map((project) => (
             <div
               key={project.id}
               className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col justify-between"
@@ -123,10 +129,10 @@ export default function Projects() {
                 layout="responsive"
                 width={300}
                 height={200}
-                className="object-cover object-top max-h-[20rem]"
+                className="object-cover object-top max-h-[20rem] min-h-[20rem]"
               />
 
-              <div className="px-6 py-3">
+              <div className="px-6 py-3 flex flex-col flex-grow">
                 <div className="flex items-start justify-between">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.title}

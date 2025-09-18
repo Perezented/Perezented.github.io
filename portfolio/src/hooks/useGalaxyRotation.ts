@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation';
 const routeRotations: Record<string, number> = {
   '/': 0,
   '': 0,
-  '/about': Math.PI / 1.5,
-  '/projects': Math.PI / 2,
-  '/contact': (3 * Math.PI) / .5,
+  '/about': .01,
+  '/projects': .02,
+  '/contact': -.01,
 };
 
 export function useGalaxyRotation() {
@@ -16,29 +16,10 @@ export function useGalaxyRotation() {
   const [rotation, setRotation] = useState(routeRotations[pathname] || 0);
 
   useEffect(() => {
-    // Animate rotation when route changes
     const target = routeRotations[pathname] || 0;
-    let frame: number;
-    function animate() {
-      setRotation((prev) => {
-        const diff = target - prev;
-        if (Math.abs(diff) < 0.01) return target;
-        return prev + diff * 0.08; // Smooth transition
-      });
-      frame = requestAnimationFrame(animate);
-    }
-    animate();
-    return () => cancelAnimationFrame(frame);
+    setRotation(target);
+    return () => setRotation(0); // Reset on unmount
   }, [pathname]);
-
-  // useEffect(() => {
-  //   // Optionally, rotate on scroll
-  //   const onScroll = () => {
-  //     setRotation((prev) => prev + (window.scrollY / 100) * 0.0005);
-  //   };
-  //   window.addEventListener('scroll', onScroll);
-  //   return () => window.removeEventListener('scroll', onScroll);
-  // }, []);
 
   return rotation;
 }
