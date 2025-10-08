@@ -22,7 +22,7 @@ export default function GalaxyLayout({ children }: { children: React.ReactNode }
         height: '100%',
         zIndex: -1,
         backgroundColor: 'rgba(0,0,0,.8)'
-      }}></div>
+      }} />
       <Navbar />
       <main className="min-h-screen relative z-10">
         {children}
