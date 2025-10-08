@@ -17,7 +17,7 @@ export default function ResumeDownload() {
 						Download PDF
 					</a>
 					<a
-						href="/Michael Perez Resume.docx"
+						href="/Michael Perez-Resume.docx"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 px-6 py-3 text-base font-semibold text-white shadow-sm hover:from-blue-500 hover:via-purple-400 hover:to-pink-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
