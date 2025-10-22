@@ -1,8 +1,8 @@
 "use client"
 import Link from 'next/link';
 import { useState } from 'react';
-import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
+import ProjectCard from '@/components/ProjectCard';
 
 interface Project {
   id: number;
@@ -119,72 +119,20 @@ export default function Projects() {
         {/* Projects grid */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.sort((a, b) => a.sortOrder - b.sortOrder).filter(x => x.category === currentSelectedCategory || currentSelectedCategory === "All").map((project) => (
-            <div
+            <ProjectCard
               key={project.id}
-              className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col justify-between"
-            >
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                layout="responsive"
-                width={300}
-                height={200}
-                className="object-cover object-top max-h-[20rem] min-h-[20rem]"
-              />
-
-              <div className="px-6 py-3 flex flex-col flex-grow">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <span className="text-nowrap inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/50 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300">
-                    {project.category}
-                  </span>
-                </div>
-
-                <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="inline-flex items-center rounded-md bg-gray-50 dark:bg-gray-700 px-2 py-1 text-xs font-medium text-gray-700 dark:text-gray-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className={((project.githubUrl || project.liveUrl) ? "mt-4 " : null) + "flex space-x-3"}>
-                  {project.liveUrl && (
-                    <Link
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
-                    >
-                      <ArrowTopRightOnSquareIcon className="h-4 w-4 mr-1" />
-                      {project.live ? "Production Site" : "Live Demo"}
-                    </Link>
-                  )}
-                  {project.githubUrl && (
-                    <Link
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      <CodeBracketIcon className="h-4 w-4 mr-1" />
-                      Code
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
+              project={{
+                name: project.title,
+                description: project.description,
+                technologies: project.technologies,
+                image: typeof project.imageUrl === 'string' ? project.imageUrl : project.imageUrl.src,
+                imageAlt: project.title,
+                liveUrl: project.liveUrl,
+                githubUrl: project.githubUrl,
+                category: project.category,
+                live: project.live
+              }}
+            />
           ))}
         </div>
 

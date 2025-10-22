@@ -1,9 +1,36 @@
-import Image from "next/image";
 import Link from 'next/link';
-import { ArrowDownIcon, CodeBracketIcon, DevicePhoneMobileIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import { ArrowDownIcon, CodeBracketIcon, ComputerDesktopIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import SkillCard from "@/components/SkillCard";
+import ProjectCard from '../components/ProjectCard';
+import WhatIAmWorkingOn from '@/components/WhatIAmWorkingOn';
 
 export default function Home() {
+  const recentProjects = [
+    {
+      name: 'Clarity-Ecommerce Framework / Clarity Payhub',
+      description: 'A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.',
+      technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS"],
+      image: '/PH-InvoiceAging.gif',
+      imageAlt: 'Clarity Payhub for invoices on aging setting demo'
+    },
+    {
+      name: "Destination Athlete",
+      description: "Destination Athlete offers custom team gear, fundraising tools, and performance services for athletes and organizations. Built with ASP.NET, it uses JavaScript, jQuery, and Microsoft IIS for backend and hosting.",
+      technologies: ["DNN", "AngularJS", "TypeScript", "MSSQL", "Bootstrap"],
+      liveUrl: "https://destinationathlete.com/",
+      image: "/ATHLT-Store-Listing-Max-08406.gif",
+      imageAlt: 'Destination Athlete website demo'
+    },
+    {
+      name: 'Pro-Select Flooring',
+      description: 'Pro-Select Flooring showcases commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states. Based out of Tulsa, OK - Pro-Select Flooring has over 100 years of experience collectively.',
+      technologies: ['React', 'Cypress', 'EmailJS', 'axios', 'react-router-dom'],
+      image: '/psfhome.gif',
+      liveUrl: 'https://pro-selectflooring.com/',
+      imageAlt: 'Pro-Select Flooring website demo'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -23,7 +50,7 @@ export default function Home() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/projects"
-                className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+                className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
               >
                 View My Work
               </Link>
@@ -43,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section (What I Do) */}
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -91,88 +118,23 @@ export default function Home() {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              //   {
-              //   name: 'New Solutions',
-              //   description: 'A full-stack HIPAA compliant application built with React.js and Node.js, ensuring secure user authentication and data protection...',
-              //   technologies: ['React', 'Clarity Ecommerce Framework', 'Bootstrap', 'DNN', 'C#'],
-              //   image: '/SPG-Edit-Patient-Updates.gif',
-              //   imageAlt: 'New Solutions website demo'
-              // },
-              {
-                name: 'Clarity-Ecommerce Framework / Clarity Payhub',
-                description: 'A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.',
-                technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS"],
-                image: '/PH-InvoiceAging.gif',
-                imageAlt: 'Clarity Payhub for invoices on aging setting demo'
-              }, {
-                name: "Destination Athlete",
-                description: "Destination Athlete offers custom team gear, fundraising tools, and performance services for athletes and organizations. Built with ASP.NET, it uses JavaScript, jQuery, and Microsoft IIS for backend and hosting.",
-                technologies: ["DNN", "AngularJS", "TypeScript", "MSSQL", "Bootstrap"],
-                liveUrl: "https://destinationathlete.com/",
-                image: "/ATHLT-Store-Listing-Max-08406.gif",
-                imageAlt: 'Destination Athlete website demo'
-              },
-              {
-                name: 'Pro-Select Flooring',
-                description: 'Pro-Select Flooring showcases commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states. Based out of Tulsa, OK - Pro-Select Flooring has over 100 years of experience collectively.',
-                technologies: ['React', 'Cypress', 'EmailJS', 'axios', 'react-router-dom'],
-                image: '/psfhome.gif',
-                liveUrl: 'https://pro-selectflooring.com/',
-                imageAlt: 'Pro-Select Flooring website demo'
-              },].map((project) => (
-                <div
-                  key={project.name}
-                  className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col justify-between"
-                >
-                  {/* <div className="aspect-video bg-gradient-to-br from-blue-400 to-purple-500"></div> */}
-                  {/* Image src for gif */}
-                  <div className="h-[360px] w-full relative">
-                    <Image
-                      src={project.image}
-                      alt={project.imageAlt}
-                      width={640}
-                      height={360}
-                      className="w-full h-auto object-cover object-top max-h-[20rem] min-h-[20rem]"
-                      priority
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text transition-colors">
-                      <span>{project.name}</span>
-                    </h3>
-                    <p className="mt-2 text-gray-600 dark:text-gray-300 flex-grow">
-                      {project.description}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-medium
-                          bg-${tech.toLowerCase() === 'react' || tech.toLowerCase() === 'c#' ? 'blue-50' : 'green-100'} 
-                          dark:bg-${tech.toLowerCase() === 'react' || tech.toLowerCase() === 'c#' ? 'blue-900/50' : 'green-900/100'}
-                          text-${tech.toLowerCase() === 'react' || tech.toLowerCase() === 'c#' ? 'blue-700' : 'gray-700'}
-                          dark:text--${tech.toLowerCase() === 'react' || tech.toLowerCase() === 'c#' ? 'blue-300' : 'gray-300'}`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {recentProjects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
           </div>
 
           <div className="mt-12 text-center">
             <Link
               href="/projects"
-              className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+              className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
             >
               View All Projects
             </Link>
           </div>
         </div>
       </section>
+
+      <WhatIAmWorkingOn />
     </div>
   );
 }
