@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface Project {
   name: string;
@@ -23,24 +23,77 @@ interface ProjectCardProps {
 }
 const AppointmentGifCarousel = ({ images, alt, length }: { images: string[]; alt: string; length?: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    if (isHovered) return; // Don't change images when hovered
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, length ?? 10_000); // Change image every 10 seconds
 
     return () => clearInterval(interval);
-  }, [images.length, length]);
+  }, [images.length, length, isHovered]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
 
   return (
-    <Image
-      src={images[currentIndex]}
-      alt={alt}
-      width={1000}
-      height={720}
-      className="w-full h-auto object-cover object-top max-h-[400px] min-h-[400px]"
-      priority
-    />
+    <div
+      className="relative w-full group/carousel"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <Image
+        src={images[currentIndex]}
+        alt={alt}
+        width={1000}
+        height={720}
+        className="w-full h-auto object-cover object-top max-h-[400px] min-h-[400px]"
+        priority
+      />
+
+      {/* Navigation Arrows - only show on hover and if there are multiple images */}
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={goToPrevious}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300"
+            aria-label="Previous image"
+          >
+            <ChevronLeftIcon className="h-6 w-6" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300"
+            aria-label="Next image"
+          >
+            <ChevronRightIcon className="h-6 w-6" />
+          </button>
+
+          {/* Image indicators */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentIndex
+                    ? 'bg-white w-8'
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
   );
 };
 
