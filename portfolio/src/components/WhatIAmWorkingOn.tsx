@@ -7,17 +7,16 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
   const whatImWorkingOn = [
     {
       name: "Appointment System",
-      description: "A comprehensive appointment scheduling platform built with React and TypeScript. Features include real-time calendar management, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, invoice generation, and WebSocket notifications. Supports multiple user roles with role-based access control and integrates with third-party calendars. Responsive Material UI design with light/dark themes.",
+      description: "A comprehensive appointment scheduling platform built with React and TypeScript. Features include real-time calendar management using WebSocket, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, and invoice generation. Supports multiple user roles with role-based access control and integrates with third-party calendars. Responsive Material UI design with light/dark themes.",
       technologies: [
         "React 19",
         "TypeScript",
         "Material UI",
         "React Router 7",
         "React Hook Form",
-        "Socket.IO",
+        "Socket.IO/WebSocket",
         "Axios",
         "DayJS",
-        "WebSockets"
       ],
       liveUrl: "https://appointmylife.vercel.app/",
       image: "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
@@ -29,13 +28,11 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
     },
     {
       name: "Appointment System Backend",
-      description: "Node.js/TypeScript backend powering a comprehensive appointment scheduling platform. Features include JWT authentication with role-based access control, SSO, real-time updates via WebSockets, multi-location support, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, invoice generation, and background job scheduling. Provides a robust RESTful API with MongoDB integration and comprehensive logging.",
+      description: "Node.js/TypeScript backend. Features include JWT authentication with role-based access control, SSO (Google/Microsoft/Facebook), real-time updates via WebSockets, multi-location support, calendar syncing (Google Calendar, Outlook), payment processing (Stripe/PayPal/Square), and background job scheduling. Provides a robust RESTful API with MongoDB integration and comprehensive logging.",
       technologies: [
-        "Node.js",
-        "TypeScript",
-        "Express",
+        "Node.js/Express",
         "MongoDB",
-        "Socket.IO",
+        "Socket.IO/WebSocket",
         "Passport.js",
         "Agenda",
         "JWT",
@@ -46,7 +43,8 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
         "google-apis",
         "Winston",
         "Helmet",
-        "Morgan"
+        "Morgan",
+        "TypeScript",
       ],
       liveUrl: "https://appointmylife.vercel.app/",
       image: "/appointmentSystem/AppointmentSystem-Postman.png",
