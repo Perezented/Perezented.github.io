@@ -18,7 +18,7 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
         "Axios",
         "DayJS",
       ],
-      liveUrl: "https://appointmylife.vercel.app/",
+      // liveUrl: "https://appointmylife.vercel.app/",
       image: "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
       images: [
         "/appointmentSystem/Appointment-SSO.gif",
@@ -46,7 +46,7 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
         "Morgan",
         "TypeScript",
       ],
-      liveUrl: "https://appointmylife.vercel.app/",
+      // liveUrl: "https://appointmylife.vercel.app/",
       image: "/appointmentSystem/AppointmentSystem-Postman.png",
       images: [
         "/appointmentSystem/AppointmentSystem-Postman.png",
