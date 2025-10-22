@@ -59,7 +59,7 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
   ]
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-800">
+    <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
           What I Am Working On
