@@ -1,5 +1,6 @@
-import Link from 'next/link';
+"use client";
 import ProjectCard from './ProjectCard';
+import React, { useState } from 'react';
 
 type WhatIAmWorkingOnProps = object
 
@@ -7,7 +8,16 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
   const whatImWorkingOn = [
     {
       name: "Appointment System",
-      description: "A comprehensive appointment scheduling platform built with React and TypeScript. Features include real-time calendar management using WebSocket, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, and invoice generation. Supports multiple user roles with role-based access control and integrates with third-party calendars. Responsive Material UI design with light/dark themes.",
+      description: (
+        <>
+          A comprehensive appointment scheduling platform built with React and TypeScript. Features include real-time calendar management using WebSocket, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, and invoice generation. Supports multiple user roles with role-based access control and integrates with third-party calendars. Responsive Material UI design with light/dark themes.
+          <br /><br />
+          <strong>Demo Credentials:</strong><br />
+          U: <CopyableKbd value="+15551234567" />
+          <br /><br />
+          P: <CopyableKbd value="OwnerPass123!" />
+        </>
+      ),
       technologies: [
         "React 19",
         "TypeScript",
@@ -18,12 +28,13 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
         "Axios",
         "DayJS",
       ],
-      // liveUrl: "https://appointmylife.vercel.app/",
+      liveUrl: "https://appointmylife.vercel.app/",
       image: "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
       images: [
         "/appointmentSystem/Appointment-SSO.gif",
         "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
       ],
+      imageProperty: 'unoptimized',
       imageAlt: 'Appointment System website demo showing calendar scheduling, invoice management, and real-time notifications'
     },
     {
@@ -56,7 +67,96 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
       imageAlt: 'Appointment System backend architecture showing API endpoints, WebSocket integration, and payment processing workflows',
       carouselLength: 4_000,
     },
-  ]
+  ];
+
+  // Toast component
+  function Toast({ message, onClose }: { message: string; onClose: () => void }) {
+    React.useEffect(() => {
+      const timer = setTimeout(onClose, 2000);
+      return () => clearTimeout(timer);
+    }, [onClose]);
+    return (
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-4 py-2 rounded shadow-lg z-50 animate-fade-in">
+        {message}
+      </div>
+    );
+  }
+
+  // Ripple effect component
+  function Ripple({ x, y }: { x: number; y: number }) {
+    return (
+      <span
+        className="absolute pointer-events-none rounded-full bg-white/40 animate-ripple"
+        style={{
+          left: x,
+          top: y,
+          width: 40,
+          height: 40,
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
+    );
+  }
+
+  // CopyableKbd component
+  function CopyableKbd({ value }: { value: string }) {
+    const [showToast, setShowToast] = useState(false);
+    const [ripple, setRipple] = useState<{ x: number; y: number } | null>(null);
+
+    const handleClick = (e: React.MouseEvent<HTMLSpanElement>) => {
+      navigator.clipboard.writeText(value);
+      setShowToast(true);
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      setRipple({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+
+      setTimeout(() => setRipple(null), 400);
+    };
+
+    return (
+      <span className="relative inline-block">
+        <kbd
+          style={{
+            cursor: 'pointer',
+            background: '#161616ff',
+            padding: '2px 6px',
+            borderRadius: '4px',
+            fontFamily: 'monospace',
+            position: 'relative',
+            color: 'white',
+            userSelect: 'none',
+          }}
+          title="Click to copy"
+          onClick={handleClick}
+        >
+          {value}
+          {ripple && <Ripple x={ripple.x} y={ripple.y} />}
+        </kbd>
+        {showToast && (
+          <Toast message="Copied!" onClose={() => setShowToast(false)} />
+        )}
+        <style>{`
+          @keyframes ripple {
+            0% { opacity: 0.5; transform: scale(0.5);}
+            100% { opacity: 0; transform: scale(2);}
+          }
+          .animate-ripple {
+            animation: ripple 0.4s linear;
+          }
+          @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+          }
+          .animate-fade-in {
+            animation: fade-in 0.3s;
+          }
+        `}</style>
+      </span>
+    );
+  }
 
   return (
     <section className="py-16">

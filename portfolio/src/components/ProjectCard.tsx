@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface Project {
   name: string;
-  description: string;
+  description: React.ReactNode | string;
   technologies: string[];
   image: string;
   imageAlt: string;
@@ -16,6 +16,7 @@ interface Project {
   live?: boolean;
   images?: string[];
   carouselLength?: number;
+  imageProperty?: 'optimized' | 'unoptimized';
 }
 
 interface ProjectCardProps {
@@ -82,11 +83,10 @@ const AppointmentGifCarousel = ({ images, alt, length }: { images: string[]; alt
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex
-                    ? 'bg-white w-8'
-                    : 'bg-white/50 hover:bg-white/75'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex
+                  ? 'bg-white w-8'
+                  : 'bg-white/50 hover:bg-white/75'
+                  }`}
                 aria-label={`Go to image ${index + 1}`}
               />
             ))}
@@ -98,6 +98,33 @@ const AppointmentGifCarousel = ({ images, alt, length }: { images: string[]; alt
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const descriptionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (descriptionRef.current) {
+      const kbdElements = descriptionRef.current.querySelectorAll('kbd[onclick]');
+      kbdElements.forEach((kbd) => {
+        const onclick = kbd.getAttribute('onclick');
+        if (onclick) {
+          // Extract the text to copy from the onclick attribute
+          const match = onclick.match(/writeText\('([^']+)'\)/);
+          if (match) {
+            const textToCopy = match[1];
+            kbd.addEventListener('click', () => {
+              navigator.clipboard.writeText(textToCopy);
+              // Optional: Add visual feedback
+              const htmlKbd = kbd as HTMLElement;
+              htmlKbd.style.background = '#dbeafe';
+              setTimeout(() => {
+                htmlKbd.style.background = '#f3f4f6';
+              }, 200);
+            });
+          }
+        }
+      });
+    }
+  }, [project.description]);
+
   return (
     <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col justify-between border border-gray-200 dark:border-gray-700">
       {project.images && project.images.length > 0
@@ -112,13 +139,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )
         : (
           <div className="h-[360px] w-full relative">
-            < Image
+            <Image
               src={project.image}
               alt={project.imageAlt}
               width={640}
               height={360}
               className="w-full h-auto object-cover object-top max-h-[20rem] min-h-[20rem]"
               priority
+              unoptimized={project.imageProperty === 'unoptimized'}
             />
           </div>
         )
@@ -135,9 +163,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
-        <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
+        <div className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
           {project.description}
-        </p>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
