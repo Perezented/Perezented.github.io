@@ -13,7 +13,7 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
           A comprehensive appointment scheduling platform built with React and TypeScript. Features include real-time calendar management using WebSocket, payment processing (Stripe/PayPal/Square), automated SMS/email campaigns, and invoice generation. Supports multiple user roles with role-based access control and integrates with third-party calendars. Responsive Material UI design with light/dark themes.
           <br /><br />
           <strong>Demo Credentials:</strong><br />
-          U: <CopyableKbd value="+15551234567" />
+          U: <CopyableKbd value="owner@demo-business.com" />
           <br /><br />
           P: <CopyableKbd value="OwnerPass123!" />
         </>
@@ -28,13 +28,13 @@ export default function WhatIAmWorkingOn({}: WhatIAmWorkingOnProps) {
         "Axios",
         "DayJS",
       ],
-      liveUrl: "https://appointmylife.vercel.app/",
+      liveUrl: "https://AppointMyLife.com/login/",
       image: "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
       images: [
         "/appointmentSystem/Appointment-SSO.gif",
         "/appointmentSystem/Appointment-WebSockets-Toasts.gif",
       ],
-      imageProperty: 'unoptimized',
+      imageProperty: 'unoptimized' as 'unoptimized' | 'optimized',
       imageAlt: 'Appointment System website demo showing calendar scheduling, invoice management, and real-time notifications'
     },
     {
