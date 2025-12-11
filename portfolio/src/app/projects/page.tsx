@@ -29,7 +29,7 @@ const projects: Project[] = [
     liveUrl: "https://Pro-SelectFlooring.com",
     githubUrl: "https://github.com/Perezented/PSF",
     category: frontEndString,
-    imageUrl: "/psfhome.gif",
+    imageUrl: "/projects/psfhome.gif",
     live: true
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     // liveUrl: "https://example.com",
     // githubUrl: "https://github.com/example",
     category: fullStackString,
-    imageUrl: "/PH-InvoiceAging.gif"
+    imageUrl: "/projects/PH-InvoiceAging.gif"
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ const projects: Project[] = [
     // liveUrl: "https://example.com",
     // githubUrl: "https://github.com/example",
     category: fullStackString,
-    imageUrl: "/SPG-Edit-Patient-Updates.gif"
+    imageUrl: "/projects/SPG-Edit-Patient-Updates.gif"
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ const projects: Project[] = [
     liveUrl: "https://destinationathlete.com/",
     // githubUrl: "https://github.com/example",
     category: frontEndString,
-    imageUrl: "/ATHLT-Store-Listing-Max-08406.gif",
+    imageUrl: "/projects/ATHLT-Store-Listing-Max-08406.gif",
     live: true
   },
   {
@@ -75,7 +75,7 @@ const projects: Project[] = [
     liveUrl: "https://perezented-portfolio.vercel.app/",
     githubUrl: "https://github.com/Perezented/Perezented.github.io",
     category: frontEndString,
-    imageUrl: "/Perezented-Portfolio.gif",
+    imageUrl: "/projects/Perezented-Portfolio.gif",
     live: true
   },
 ];

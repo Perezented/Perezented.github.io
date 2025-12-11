@@ -10,7 +10,7 @@ export default function Home() {
       name: 'Clarity-Ecommerce Framework / Clarity Payhub',
       description: 'A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.',
       technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS"],
-      image: '/PH-InvoiceAging.gif',
+      image: '/projects/PH-InvoiceAging.gif',
       imageAlt: 'Clarity Payhub for invoices on aging setting demo'
     },
     {
@@ -18,14 +18,14 @@ export default function Home() {
       description: "Destination Athlete offers custom team gear, fundraising tools, and performance services for athletes and organizations. Built with ASP.NET, it uses JavaScript, jQuery, and Microsoft IIS for backend and hosting.",
       technologies: ["DNN", "AngularJS", "TypeScript", "MSSQL", "Bootstrap"],
       liveUrl: "https://destinationathlete.com/",
-      image: "/ATHLT-Store-Listing-Max-08406.gif",
+      image: "/projects/ATHLT-Store-Listing-Max-08406.gif",
       imageAlt: 'Destination Athlete website demo'
     },
     {
       name: 'Pro-Select Flooring',
       description: 'Pro-Select Flooring showcases commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states. Based out of Tulsa, OK - Pro-Select Flooring has over 100 years of experience collectively.',
       technologies: ['React', 'Cypress', 'EmailJS', 'axios', 'react-router-dom'],
-      image: '/psfhome.gif',
+      image: '/projects/psfhome.gif',
       liveUrl: 'https://pro-selectflooring.com/',
       imageAlt: 'Pro-Select Flooring website demo'
     }
@@ -134,6 +134,55 @@ export default function Home() {
               View All Projects
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Cool Projects Section */}
+      <section className="py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Cool Projects
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+              A selection of fun and interesting projects I've worked on in my spare time.
+            </p>
+          </div>
+        </div>
+        <div className="mt-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 bg-white dark:bg-gray-800 p-8 ">
+          <ProjectCard
+            project={{
+              name: 'Month & Year Progress Bar Script',
+              description: 'A small Bash script that prints 50-character progress bars and numeric stats for the current month, business days in the month, and the year (minutes/hours/days/weeks elapsed). Includes a watch mode to auto-refresh and requires GNU date / awk for accurate date arithmetic.',
+              technologies: ['shell scripting', 'bash'],
+              githubUrl: 'https://github.com/Perezented/Month-And-Year-Progress-Bar-Script',
+              image: '/projects/month-year-progress-bar.png',
+              imageAlt: 'Month & Year Progress Bar Script demo'
+            }}
+          />
+          <ProjectCard
+            project={{
+              name: 'Bit Flipper',
+              description: 'A Python web app that visualizes numbers as binary bits grouped into 8-bit bytes with neon styling and animations. Features two modes: bit count to bytes conversion and binary bytes representation. Includes keyboard shortcuts for quick navigation and E2E tests with Playwright.',
+              technologies: ['Python', 'Flask', 'JavaScript', 'CSS', 'HTML', 'Playwright'],
+              githubUrl: 'https://github.com/Perezented/Bit-Flipper',
+              liveUrl: 'https://bit-flipper.vercel.app/',
+              image: '/projects/binary-demo.gif',
+              images: ['/projects/binary-demo.gif', '/projects/binary-demo.gif'],
+              imageAlt: 'Bit Flipper app showing binary visualization with neon-styled 8-bit byte grids'
+            }}
+          />
+          {/* <ProjectCard
+            project={{
+              name: 'Python ASCII Image',
+              description: 'A small Python script that converts images into ASCII art. It resizes and grayscales the input image, maps pixel brightness to ASCII characters, and saves the output to a text file. The width/height are adjustable, and it supports various image formats.',
+              technologies: ['Python', 'Pillow (PIL)'],
+              githubUrl: 'https://github.com/Perezented/Python-Ascii-Image',
+              image: '/projects/Ascii_art.py.gif',
+              imageAlt: 'A GIF demonstration of ASCII art generated from an image',
+            }}
+          /> */}
+
         </div>
       </section>
 
