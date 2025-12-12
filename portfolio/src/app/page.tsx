@@ -172,6 +172,23 @@ export default function Home() {
               imageAlt: 'Bit Flipper app showing binary visualization with neon-styled 8-bit byte grids'
             }}
           />
+          <ProjectCard
+            project={{
+              name: "Pumpkin — Raspberry Pi Jack-o'-Lantern",
+              description: (
+                <>
+                  A motion-sensing Halloween prop that rotates to face people who walk by. Built with a Raspberry Pi, PIR motion sensors, an MG995 servo and LEDs on a 3D-printed base.<br/>
+                  See coverage: <a href="https://blog.pishop.co.za/this-creepy-raspberry-pi-jack-o-lantern-turns-to-face-anyone-who-walks-by/" target="_blank" className='underline' rel="noopener noreferrer">PiShop</a> and <a href="https://www.tomshardware.com/raspberry-pi/this-creepy-raspberry-pi-jack-o-lantern-turns-to-face-anyone-who-walks-by" target="_blank" className='underline' rel="noopener noreferrer">Tom's Hardware</a>.
+                </>
+              ),
+              technologies: ['Raspberry Pi', 'PIR motion sensors', 'Servo (MG995)', 'LEDs', '3D printing'],
+              videoUrl: 'https://www.youtube.com/shorts/hiRQDHXuJxw',
+              image: 'https://img.youtube.com/vi/hiRQDHXuJxw/hqdefault.jpg',
+              imageProperty: 'unoptimized',
+              imageAlt: 'Pumpkin jack-o-lantern rotating to track people',
+            }}
+          />
+
           {/* <ProjectCard
             project={{
               name: 'Python ASCII Image',

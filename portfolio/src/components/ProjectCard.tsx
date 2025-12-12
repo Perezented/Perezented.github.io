@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ChevronLeftIcon, ChevronRightIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
 
 interface Project {
   name: string;
@@ -17,6 +17,7 @@ interface Project {
   images?: string[];
   carouselLength?: number;
   imageProperty?: 'optimized' | 'unoptimized';
+  videoUrl?: string; // Optional YouTube/other video link to render in card
 }
 
 interface ProjectCardProps {
@@ -125,9 +126,82 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     }
   }, [project.description]);
 
+  // If a project has a `videoUrl`, render an iframe that autoplays (muted) when it enters the viewport.
+  const videoRef = useRef<HTMLDivElement | null>(null);
+  const [iframeSrc, setIframeSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const videoUrl = project.videoUrl;
+    if (!videoUrl || !videoRef.current) return;
+
+    const el = videoRef.current;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Extract YouTube video ID if it's a youtube link
+            try {
+            const url = new URL(videoUrl);
+            let id = '';
+            if (url.hostname.includes('youtube.com')) {
+              // Handle /shorts/<id> or /watch?v=<id>
+              if (url.pathname.startsWith('/shorts/')) {
+                id = url.pathname.split('/shorts/')[1];
+              } else {
+                id = url.searchParams.get('v') || '';
+              }
+            } else if (url.hostname.includes('youtu.be')) {
+              id = url.pathname.substring(1);
+            }
+
+            if (id) {
+              // Build embed URL to autoplay muted and loop (with playlist)
+              setIframeSrc(`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&loop=1&playlist=${id}`);
+            } else {
+              // Not youtube: just set src directly
+              setIframeSrc(videoUrl);
+            }
+          } catch (e) {
+            setIframeSrc(videoUrl);
+          }
+        } else {
+          // Stop playback when out of view
+          setIframeSrc(null);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [project.videoUrl]);
+
   return (
     <div className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col justify-between border border-gray-200 dark:border-gray-700">
-      {project.images && project.images.length > 0
+      {project.videoUrl ? (
+        <div className="relative w-full" ref={videoRef}>
+          {iframeSrc ? (
+            <div className="w-full h-[400px] max-h-[400px]">
+              <iframe
+                title={project.name}
+                src={iframeSrc}
+                className="w-full h-full"
+                allow="autoplay; encrypted-media; fullscreen"
+                frameBorder="0"
+              />
+            </div>
+          ) : (
+            // Show a fallback thumbnail while not playing
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              width={1000}
+              height={720}
+              className="w-full h-auto object-cover object-top max-h-[400px] min-h-[400px]"
+              priority
+              unoptimized={project.imageProperty === 'unoptimized'}
+            />
+          )}
+        </div>
+      ) : project.images && project.images.length > 0
         ? (
           <div className="w-full relative">
             <AppointmentGifCarousel
@@ -201,7 +275,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               Code
             </Link>
           )}
-          {!project.githubUrl && !project.liveUrl && (
+          {project.videoUrl && (
+            <Link
+              href={project.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            >
+              <VideoCameraIcon className="h-4 w-4 mr-1" />
+              Video
+            </Link>
+          )}
+          {!project.githubUrl && !project.liveUrl && !project.videoUrl && (
             <div className="text-sm text-gray-500 dark:text-gray-400 min-h-[2.25rem]" />
           )}
         </div>
