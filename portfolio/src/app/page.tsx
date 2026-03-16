@@ -31,6 +31,34 @@ export default function Home() {
     }
   ];
 
+              {/* 
+interface Project {
+  name: string;
+  description: React.ReactNode | string;
+  technologies: string[];
+  image: string;
+  imageAlt: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  category?: string;
+  live?: boolean;
+  images?: string[];
+  carouselLength?: number;
+  imageProperty?: 'optimized' | 'unoptimized';
+  videoUrl?: string; // Optional YouTube/other video link to render in card
+}
+
+            */}
+  const worldNewsGlobeAppProject = {
+    name: 'World News Globe',
+    description: 'An interactive globe visualization that displays news articles from around the world. Users can rotate the globe to explore news by country, with articles categorized by topic and source. Built with React, Cesium, and various news API\'s and RSS feeds from around the world for real-time data. 3D globe visualization with clustered event pins. Multiple data layers: news, earthquakes, fires, weather alerts, conflicts, health, humanitarian. Live feeds from GDELT, NOAA, NASA, ReliefWeb, GDACS, WHO, and RSS sources. Search + geofencing: type a place & the camera flies there. Filter by severity / time window / keyword. Interactive overlay cards showing event details. Trends dashboard: keyword trends, sentiment, and geo heatmaps. Server-side caching via Redis (Upstash)',
+    technologies: ['Next.js', 'React.js', 'Cesium', 'News API', 'RSS'],
+    image: '/projects/world-news.gif',
+    imageAlt: 'World News Globe App demo showing interactive globe with news article markers',
+    liveUrl: 'https://world-news-globe.vercel.app//',
+    githubUrl: '',
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -101,6 +129,14 @@ export default function Home() {
               title="Mobile-First & Responsive Design"
               description="Designing applications that look and perform great on all devices, prioritizing mobile usability and accessibility."
             />
+          </div>
+        </div>
+      </section>
+      {/* Recent Completed Project - World News Globe App */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-lg mx-auto">
+            <ProjectCard key={"world-news-globe-app"} project={worldNewsGlobeAppProject} />
           </div>
         </div>
       </section>
