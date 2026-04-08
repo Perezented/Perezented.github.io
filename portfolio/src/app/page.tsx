@@ -59,11 +59,11 @@ interface Project {
     githubUrl: '',
   };
   const todoAppProject = {
-    name: 'OpenClaw Todo App',
+    name: 'Todo App built with OpenClaw AI Agent and Local LM Studio',
     description: 'Built with React and TypeScript on a lightning-fast Vite stack, this todo app leverages Zustand for state persistence, Tailwind CSS for pixel-perfect styling, Lucide Icons for crisp UI, and Vitest for robust test coverage. The full experience is orchestrated by an autonomous OpenClaw AI agent using Local LM Studio, showcasing agent-driven development, AI-assisted workflows, and secure networking via Tailscale. The local model runs on a Tailnet-connected device, with medina-qwen3.5-27b-openclaw as the primary local LLM, unsloth/gpt-oss-20b as a backup sub-agent for cases Medina can’t resolve, and gpt-5-mini as a fallback before switching back to local inference to demonstrate the real capabilities of an offline-first local model.',
     technologies: ['React', 'TypeScript', 'Vite', 'Zustand', 'Tailwind CSS', 'Lucide Icons', 'Local LM Studio', 'OpenClaw AI agent', 'Agent-driven development', 'Tailscale'],
     image: '/projects/react-todo-app-openclaw.gif',
-    imageAlt: 'OpenClaw Todo App demo',
+    imageAlt: 'Todo App demo',
     liveUrl: 'https://openclaw-react-todo-app.vercel.app/',
     githubUrl: 'https://github.com/Perezented/openclaw_react_todo_app',
   };
