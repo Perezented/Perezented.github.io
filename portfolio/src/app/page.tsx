@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowDownIcon, CodeBracketIcon, ComputerDesktopIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import SkillCard from "@/components/SkillCard";
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard, { Project } from '../components/ProjectCard';
 import WhatIAmWorkingOn from '@/components/WhatIAmWorkingOn';
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
     }
   ];
 
-              {/* 
+  {/* 
 interface Project {
   name: string;
   description: React.ReactNode | string;
@@ -48,7 +48,7 @@ interface Project {
   videoUrl?: string; // Optional YouTube/other video link to render in card
 }
 
-            */}
+*/}
   const worldNewsGlobeAppProject = {
     name: 'World News Globe',
     description: 'An interactive globe visualization that displays news articles from around the world. Users can rotate the globe to explore news by country, with articles categorized by topic and source. Built with React, Cesium, and various news API\'s and RSS feeds from around the world for real-time data. 3D globe visualization with clustered event pins. Multiple data layers: news, earthquakes, fires, weather alerts, conflicts, health, humanitarian. Live feeds from GDELT, NOAA, NASA, ReliefWeb, GDACS, WHO, and RSS sources. Search + geofencing: type a place & the camera flies there. Filter by severity / time window / keyword. Interactive overlay cards showing event details. Trends dashboard: keyword trends, sentiment, and geo heatmaps. Server-side caching via Redis (Upstash)',
@@ -58,6 +58,19 @@ interface Project {
     liveUrl: 'https://world-news-globe.vercel.app//',
     githubUrl: '',
   };
+  const todoAppProject = {
+    name: 'OpenClaw Todo App',
+    description: 'Built with React and TypeScript on a lightning-fast Vite stack, this todo app leverages Zustand for state persistence, Tailwind CSS for pixel-perfect styling, Lucide Icons for crisp UI, and Vitest for robust test coverage. The full experience is orchestrated by an autonomous OpenClaw AI agent using Local LM Studio, showcasing agent-driven development, AI-assisted workflows, and secure networking via Tailscale. The local model runs on a Tailnet-connected device, with medina-qwen3.5-27b-openclaw as the primary local LLM, unsloth/gpt-oss-20b as a backup sub-agent for cases Medina can’t resolve, and gpt-5-mini as a fallback before switching back to local inference to demonstrate the real capabilities of an offline-first local model.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Zustand', 'Tailwind CSS', 'Lucide Icons', 'Local LM Studio', 'OpenClaw AI agent', 'Agent-driven development', 'Tailscale'],
+    image: '/projects/react-todo-app-openclaw.gif',
+    imageAlt: 'OpenClaw Todo App demo',
+    liveUrl: 'https://openclaw-react-todo-app.vercel.app/',
+    githubUrl: 'https://github.com/Perezented/openclaw_react_todo_app',
+  };
+  const recentAIProjects: Project[] = [
+    worldNewsGlobeAppProject,
+    todoAppProject,
+  ];
 
   return (
     <div className="min-h-screen">
@@ -132,11 +145,22 @@ interface Project {
           </div>
         </div>
       </section>
-      {/* Recent Completed Project - World News Globe App */}
+      {/* Recent AI-assisted Projects */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-lg mx-auto">
-            <ProjectCard key={"world-news-globe-app"} project={worldNewsGlobeAppProject} />
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              AI-assisted Projects
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Projects built with AI-assisted workflows, including autonomous local model orchestration and agent-driven development.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+            {recentAIProjects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -213,7 +237,7 @@ interface Project {
               name: "Pumpkin — Raspberry Pi Jack-o'-Lantern",
               description: (
                 <>
-                  A motion-sensing Halloween prop that rotates to face people who walk by. Built with a Raspberry Pi, PIR motion sensors, an MG995 servo and LEDs on a 3D-printed base.<br/>
+                  A motion-sensing Halloween prop that rotates to face people who walk by. Built with a Raspberry Pi, PIR motion sensors, an MG995 servo and LEDs on a 3D-printed base.<br />
                   See coverage: <a href="https://blog.pishop.co.za/this-creepy-raspberry-pi-jack-o-lantern-turns-to-face-anyone-who-walks-by/" target="_blank" className='underline' rel="noopener noreferrer">PiShop</a> and <a href="https://www.tomshardware.com/raspberry-pi/this-creepy-raspberry-pi-jack-o-lantern-turns-to-face-anyone-who-walks-by" target="_blank" className='underline' rel="noopener noreferrer">Tom's Hardware</a>.
                 </>
               ),

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ChevronLeftIcon, ChevronRightIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
 
-interface Project {
+export interface Project {
   name: string;
   description: React.ReactNode | string;
   technologies: string[];
