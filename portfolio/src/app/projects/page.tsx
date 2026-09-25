@@ -22,7 +22,7 @@ const fullStackString = "Full Stack";
 const projects: Project[] = [
   {
     id: 1,
-    sortOrder: 4,
+    sortOrder: 5,
     title: "Pro-Select Flooring",
     description: "Optimized for clarity and mobile responsiveness, with minimal JavaScript and no heavy client-side frameworks. Pro-Select Flooring is a service-focused platform showcasing commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states.",
     technologies: ["React.js", "Bootstrap", "jest", "axios", "emailjs-com", "gh-pages", "node-sass", "sass"],
@@ -34,7 +34,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    sortOrder: 3,
+    sortOrder: 4,
     title: "Clarity E-Commerce Framework / Clarity Payhub",
     description: "A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.",
     technologies: ["Remix.js", "TypeScript", "C#", "MSSQL", "radix-ui", "Tailwind CSS", "React.js", "Bootstrap"],
@@ -45,7 +45,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    sortOrder: 1,
+    sortOrder: 2,
     title: "New Solutions",
     description: "A full-stack hippa compliant application built with React.js and Node.js, ensuring secure user authentication and data protection. Doctor portal with patient management branched off of the Clarity E-Commerce Framework. Features a product showcase platform for New Solutions, featuring pharmaceutical compounds aimed at enhancing wellness, performance, and aesthetics.",
     technologies: ["React.js", "TypeScript", "C#", "MSSQL", "Bootstrap", "DNN", "Microsoft Azure"],
@@ -56,7 +56,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    sortOrder: 2,
+    sortOrder: 3,
     title: "Destination Athlete",
     description: "DestinationAthlete.com is built on the DNN (DotNetNuke) content management system, leveraging ASP.NET for server-side rendering and modular component integration. The site architecture supports dynamic content delivery and e-commerce functionality through custom modules and third-party extensions tailored for team sports merchandising.",
     technologies: ["DNN", "AngularJS", "TypeScript", "MSSQL", "Bootstrap"],
@@ -68,7 +68,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    sortOrder: 5,
+    sortOrder: 6,
     title: "My Portfolio",
     description: "A showcase of my work as a developer, featuring projects built with various technologies and frameworks. This portfolio demonstrates my skills in front-end and back-end development, as well as my ability to create responsive and user-friendly interfaces.",
     technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Three.js", "emailjs-com"],
@@ -77,6 +77,17 @@ const projects: Project[] = [
     category: frontEndString,
     imageUrl: "/projects/Perezented-Portfolio.gif",
     live: true
+  },
+  {
+    id: 6,
+    sortOrder: 1,
+    title: "Henryetta Eye Center",
+    description: 'A modern, responsive website for Henryetta Eye Center, a local optometry practice. Built with RNext.js, React.js and Tailwind CSS, featuring an appointment booking system and patient resources.',
+    technologies: ['React.js', 'Next.js', 'Lucide', 'Tailwind CSS', 'Vercel', 'Google Maps API'],
+    category: frontEndString,
+    liveUrl: 'https://HenryettaEyeCenter.com/',
+    imageUrl: '/projects/henryetta-eye-center.gif',
+    live: true,
   },
 ];
 
