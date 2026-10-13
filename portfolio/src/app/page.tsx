@@ -2,10 +2,17 @@ import Link from 'next/link';
 import { ArrowDownIcon, CodeBracketIcon, ComputerDesktopIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import SkillCard from "@/components/SkillCard";
 import ProjectCard, { Project } from '../components/ProjectCard';
-import WhatIAmWorkingOn from '@/components/WhatIAmWorkingOn';
 
 export default function Home() {
   const recentProjects = [
+    {
+      name: 'Henryetta Eye Center',
+      description: 'A modern, responsive website for Henryetta Eye Center, a local optometry practice. Built with RNext.js, React.js and Tailwind CSS, featuring an appointment booking system and patient resources.',
+      technologies: ['React.js', 'Next.js', 'Lucide', 'Tailwind CSS', 'Vercel', 'Google Maps API'],
+      liveUrl: 'https://HenryettaEyeCenter.com/',
+      image: '/projects/henryetta-eye-center.gif',
+      imageAlt: 'Henryetta Eye Center website demo'
+    },
     {
       name: 'Clarity-Ecommerce Framework / Clarity Payhub',
       description: 'A full-stack e-commerce application originally built with React.js and Bootstrap, featuring user authentication, payment processing, and admin dashboard. The project was then converted to Remix.js with Tailwind CSS.',
@@ -20,14 +27,6 @@ export default function Home() {
       liveUrl: "https://destinationathlete.com/",
       image: "/projects/ATHLT-Store-Listing-Max-08406.gif",
       imageAlt: 'Destination Athlete website demo'
-    },
-    {
-      name: 'Pro-Select Flooring',
-      description: 'Pro-Select Flooring showcases commercial flooring expertise across hospitals, schools, churches, and businesses in Oklahoma and surrounding states. Based out of Tulsa, OK - Pro-Select Flooring has over 100 years of experience collectively.',
-      technologies: ['React', 'Cypress', 'EmailJS', 'axios', 'react-router-dom'],
-      image: '/projects/psfhome.gif',
-      liveUrl: 'https://pro-selectflooring.com/',
-      imageAlt: 'Pro-Select Flooring website demo'
     }
   ];
 
@@ -145,28 +144,9 @@ interface Project {
           </div>
         </div>
       </section>
-      {/* Recent AI-assisted Projects */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              AI-assisted Projects
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Projects built with AI-assisted workflows, including autonomous local model orchestration and agent-driven development.
-            </p>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
-            {recentAIProjects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* What I Am Working On Section */}
-      <WhatIAmWorkingOn />
+      {/* <WhatIAmWorkingOn /> */}
 
       {/* Recent Projects Preview */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
@@ -260,6 +240,25 @@ interface Project {
             }}
           /> */}
 
+        </div>
+      </section>
+      {/* Recent AI-assisted Projects */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              AI-assisted Projects
+            </h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Projects built with AI-assisted workflows, including autonomous local model orchestration and agent-driven development.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+            {recentAIProjects.map((project) => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
         </div>
       </section>
 
